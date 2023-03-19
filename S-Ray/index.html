@@ -25,7 +25,7 @@
 <body>
 <div class="jumbotron jumbotron-fluid">
     <div class="container"></div>
-    <h2>Semantic-Ray: Learning a Generalizable Semantic Field with<br>Cross-Reprojection Attentionwith</h2>
+    <h2>Semantic-Ray: Learning a Generalizable Semantic Field with<br>Cross-Reprojection Attention</h2>
     <h3>CVPR 2023</h3>
 <!--            <p class="abstract">An interpretable, data-efficient, and scalable neural scene representation.</p>-->
     <hr>
@@ -63,7 +63,7 @@
     </div> -->
 </div>
 
-<div class="container">
+<!-- <div class="container">
     <div class="section">
         <div class="vcontainer">
             <iframe class='video' src="https://www.youtube.com/embed/Q2fLWGBeaiI" frameborder="0"
@@ -95,19 +95,13 @@
             the Poisson equation, and the Helmholtz and wave equations. Lastly, we combine
             SIREN with hypernetworks to learn priors over the space of SIREN functions.
         </p>
-    </div>
+    </div> -->
 
     <div class="section">
-        <h2>Baselines</h2>
+        <h2>Abstract</h2>
         <hr>
         <p>
-            The following results compare SIREN to a variety of network architectures. <b>TanH</b>, <b>ReLU</b>,
-            <b>Softplus</b> etc. means an MLP of equal size with the respective nonlinearity.
-            We also compare to the recently proposed positional encoding, combined with a ReLU nonlinearity, noted as
-            <b>ReLU P.E.</b>
-            SIREN outperforms all baselines by a significant margin, converges significantly faster, and is the only
-            architecture that accurately represents the gradients of the signal, enabling its use to solve boundary
-            value problems.
+            In this paper, we aim to learn a semantic radiance field from multiple scenes that is accurate, efficient and generalizable. While most existing NeRFs target at the tasks of neural scene rendering, image synthesis and multi-view reconstruction, there are a few attempts such as Semantic NeRF that explore to learn high-level semantic understanding with the NeRF structure. However, Semantic-NeRF simultaneously learns color and semantic label from a single ray with multiple heads, where single rays fail to provide rich semantic information. As a result, Semantic NeRF relies on positional encoding and needs to train one independent model for each scene. To address this, we propose Semantic Ray (S-Ray) to fully exploit semantic information along the ray direction from its multi-view reprojections. As directly performing dense attention over multi-view reprojected rays would suffer from heavy computational cost, we design a Cross-Reprojection Attention model with consecutive radial and cross-view sparse attentions, which decomposes contextual information along reprojected rays and cross multiple views and then collects dense connections by stacking the modules. Experiments show that our S-Ray is able to learn from multiple scenes, and it presents strong generalization ability to adapt to unseen scenes.
         </p>
     </div>
 
