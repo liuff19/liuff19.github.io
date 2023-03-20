@@ -116,123 +116,35 @@
     </div>
 
     <div class="section">
-        <h2>Generalizable Semantic Field</h2>
+        <h2>Method</h2>
         <hr>
-        <p>
-            A Siren with a single, time-coordinate input and scalar output may parameterize audio signals. Siren is the
-            only network architecture that succeeds in reproducing the audio signal, both for music and human voice.
-        </p>
-        <div class="row justify-content-left">
-            <div class="col-sm-3">
-                <h5>Ground truth</h5>
-                <img src="img/audio/gt_bach.png" style="width:100%">
-                <audio
-                        controls
-                        src="img/audio/gt_bach.wav"
-                        class="media-left"
-                        style="width:100%">
-                    Your browser does not support the
-                    <code>audio</code> element.
-                </audio>
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <img src="img/pipeline.png" alt="pipeline" width="100%">
             </div>
-            <div class="col-sm-3">
-                <h5>ReLU MLP</h5>
-                <img src="img/audio/relu_bach.png" style="width:100%">
-                <audio
-                        controls
-                        src="img/audio/relu_bach.wav"
-                        class="media-left"
-                        style="width:100%">
-                    Your browser does not support the
-                    <code>audio</code> element.
-                </audio>
-            </div>
-            <div class="col-sm-3">
-                <h5>ReLU w/ Pos. Enc.</h5>
-                <img src="img/audio/relu_pe_bach.png" style="width:100%">
-                <audio
-                        controls
-                        src="img/audio/relu_pe_bach.wav"
-                        class="media-left"
-                        style="width:100%">
-                    Your browser does not support the
-                    <code>audio</code> element.
-                </audio>
-            </div>
-            <div class="col-sm-3">
-                <h5>Siren</h5>
-                <img src="img/audio/siren_bach.png" style="width:100%">
-                <audio
-                        controls
-                        src="img/audio/siren_bach.wav"
-                        class="media-left"
-                        style="width:100%">
-                    Your browser does not support the
-                    <code>audio</code> element.
-                </audio>
-            </div>
-
-            <div class="row justify-content-left">
-                <div class="col-sm-3">
-<!--                    <h5>Ground truth</h5>-->
-                    <img src="img/audio/gt_counting.png" style="width:100%">
-                    <audio
-                            controls
-                            src="img/audio/gt_counting.wav"
-                            class="media-left"
-                            style="width:100%">
-                        Your browser does not support the
-                        <code>audio</code> element.
-                    </audio>
-                </div>
-                <div class="col-sm-3">
-<!--                    <h5>ReLU MLP</h5>-->
-                    <img src="img/audio/relu_counting.png" style="width:100%">
-                    <audio
-                            controls
-                            src="img/audio/relu_counting.wav"
-                            class="media-left"
-                            style="width:100%">
-                        Your browser does not support the
-                        <code>audio</code> element.
-                    </audio>
-                </div>
-                <div class="col-sm-3">
-<!--                    <h5>ReLU P.E.</h5>-->
-                    <img src="img/audio/relu_pe_counting.png" style="width:100%">
-                    <audio
-                            controls
-                            src="img/audio/relu_pe_counting.wav"
-                            class="media-left"
-                            style="width:100%">
-                        Your browser does not support the
-                        <code>audio</code> element.
-                    </audio>
-                </div>
-                <div class="col-sm-3">
-<!--                    <h5>Siren</h5>-->
-                    <img src="img/audio/siren_counting.png" style="width:100%">
-                    <audio
-                            controls
-                            src="img/audio/siren_counting.wav"
-                            class="media-left"
-                            style="width:100%">
-                        Your browser does not support the
-                        <code>audio</code> element.
-                    </audio>
-                </div>
         </div>
+        <p>
+            Pipeline of semantic rendering with S-Ray. Given input views and a query ray, we first reproject the ray to each input view and apply a CNN-based module to 
+            extract contextual features to build an initial 3D contextual space. Then, we apply the cross-reprojection attention module to learn dense semantic connections 
+            and build a refined contextual space. For semantic ray rendering, we adopt the semantic-aware weight net to learn the significance of each view to construct 
+            our semantic ray from refined contextual space. Finally, we leverage the geometry-aware net to get the density and render the semantics along the query ray.
+        </p>
     </div>
 
     <div class="section">
-        <h2>Representing Video</h2>
+        <h2>Cross-Reprojection Attention Module</h2>
         <hr>
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <img src="img/CRA.png" alt="CRA_module" width="100%">
+            </div>
+        </div>
         <p>
             A Siren with pixel coordinates together with a time coordinate can be used to parameterize a video.
             Here, Siren is directly supervised with the ground-truth pixel values, and parameterizes video significantly
             better than a ReLU MLP.
         </p>
-        <div class="row align-items-center">
+        <!-- <div class="row align-items-center">
             <div class="col justify-content-center text-center">
                 <video width="50%" playsinline="" autoplay="" loop="" preload="" muted="">
                     <source src="img/cat_comparison_label.mp4" type="video/mp4">
@@ -243,7 +155,7 @@
                     <source src="img/bikes_comparison_label.mp4" type="video/mp4">
                 </video>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="section">
