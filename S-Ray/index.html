@@ -142,10 +142,10 @@
         <p style="font-size: 16px; margin-top: 10px; text-align: center;">
             <b>Pipeline of Cross-Reprojection Attention.</b> Given the initial 3D contextual space, we first decompose M along the 
             radial direction (i.e., each intra-view). Then, we apply the intra-view radial attention module to each F<sub>i</sub> (i=1, &#8230;, m) to learn the 
-            ray-aligned contextual feature from each source view and build the &#119980;&#8242;. We further decompose the &#119980;&#8242; cross multiple views and 
-            employ the cross-view sparse attention module to each &#119975;&#8242;<sub>r*(i)</sub>, thus capturing sparse contextual patterns with their respective 
+            ray-aligned contextual feature from each source view and build the M&#8242;. We further decompose the M&#8242; cross multiple views and 
+            employ the cross-view sparse attention module to each F&#8242;<sub>r*(i)</sub>, thus capturing sparse contextual patterns with their respective 
             significance to semantics. After the two consecutive attention modules, we fuse the decomposed contextual information with the final refined 3D contextual 
-            space &#119980;&#8242;&#8242;, which models dense semantic collections around the ray. (Best viewed in color)
+            space M&#8242;&#8242;, which models dense semantic collections around the ray.
         </p>
         <!-- <div class="row align-items-center">
             <div class="col justify-content-center text-center">
