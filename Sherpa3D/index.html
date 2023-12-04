@@ -130,17 +130,11 @@
 
 <section class="hero teaser">
   <div class="columns is-centered has-text-centered">
-    <div class="column is-full-width">
-      <h2 class="title is-3">Method</h2>
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Teaser</h2>
       <div class="content has-text-justified">
         <p>
-          Our method can generate disentangled geometry and appearance given a text prompt (cf. figure (a)),
-          which are produced by (b) geometry modeling and (c) appearance modeling, respectively. (b) We employ DMTET as our 3D geometry
-          representation, which is initialized as a 3D ellipsoid here. To optimize the parameters of DMTET, we render the normal map (and the
-          object mask in the early training phase) of the extracted mesh from DMTet as the shape encoding of stable diffusion. (c) For
-          appearance modeling, we introduce the spatially-varying Bidirectional Reflectance Distribution Function (BRDF) modeling into text-to-
-          3D generation, and learn to predict three components (namely, kd, krm, and kn) of the appearance. Both geometry and appearance
-          modeling are supervised by Score Distillation Sampling (SDS) loss.
+          <b>Gallery of Sherpa3D:</b> Blender rendering for various textured meshes from <b>Sherpa3D</b>, which is able to generate high-fidelity, diverse, and multi-view consistent 3D contents with input text prompts. Our method is also compatible with popular graphics engines.
         </p>
       </div> 
       <img src="./static/figs/teaser.png">
