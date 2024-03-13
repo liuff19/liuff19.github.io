@@ -248,18 +248,13 @@
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
           <p>
-            Given a text as input, we first prompt 3D diffusion to build a coarse 3D prior M encoded in the geometry model (e.g., DMTet). 
-            Next, we render the normal map of the extracted mesh in DMTet and derive two guiding strategies from M: 
-            Structural Guidance: We utilize the structural descriptor to compute salient geometric features for preserving geometry fidelity (e.g., without a 
-            pockmarked face problem); Semantic Guidance: We leverage a semantic encoder (e.g., CLIP) to extract high-level information for keeping 3D 
-            consistency (e.g., without multi-face issues). 
-            Employing the two guidance in 2D lifting process, we use the normal map as shape encoding of the 2D diffusion model and unleash its power to 
-            generate high-quality and diversified results with 3D coherence. 
-            Then we achieve the final 3D results via photorealistic rendering through appearance modeling. 
-            <i>("Everest's summit eludes many without <b>Sherpa</b>.")</i>
+            <b>The overall framework of our proposed Make-Your-3D.</b> Our framework includes identity-aware optimization of 2D personalized model and subject-prior optimization of multi-view diffusion model to  
+            approximate subject distribution. The identity-aware optimization lifts input image to 3D space through a frozen multi-view diffusion model and optimizes the 2D 
+            personalized model via multi-views. The subject-prior optimization adopts diverse images from frozen personalized model to infuse the subject-specific prior into 
+            the multi-view diffusion model.
         </p>        
         </div>
-        <img src="./static/figs/final_pipeline_00.png">
+        <img src="./static/figs/pipeline-my3d.png">
         <div class="content has-text-justified">
         </div>
       </div>
