@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <title>DreamCinema: Cinematic Transfer with Free Camera and 3D Character</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DreamCinema: Cinematic Transfer with Free Camera and 3D Character</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://liuff19.github.io/">Weiliang Chen</a><sup>1</sup>,</span>
+            <span class="author-block">
+              Fangfu Liu<sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://weiyithu.github.io/">Diankun Wu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://raoyongming.github.io/">Kailu Wu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://duanyueqi.github.io/">Haixu Song</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://duanyueqi.github.io/">Yueqi Duan</a><sup>1</sup>,
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Tsinghua University,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span style="font-weight: bold;">arxiv</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/pdfs/DreamCinema_paper.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://liuff19.github.io//DreamCinema/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-powerpoint"></i>
+                  </span>
+                  <span>Home</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/myvideos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+          Sherpa3D is a new text-to-3D framework that can generate high fidelity, 
+          diverse, and 3D-consistent results within 25 minutes.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recently, 3D content creation from text prompts has demonstrated remarkable progress by utilizing 2D and 3D diffusion models. 
+            While 3D diffusion models ensure great multi-view consistency, their ability to generate high-quality and diverse 3D assets is    
+            hindered by the limited 3D data. In contrast, 2D diffusion models find a distillation approach that achieves excellent 
+            generalization and rich details without any 3D data. However, 2D lifting methods suffer from inherent view-agnostic ambiguity 
+            thereby leading to serious multi-face Janus issues, where text prompts fail to provide sufficient guidance to learn coherent 3D   
+            results. Instead of retraining a costly viewpoint-aware model, we study how to fully exploit easily accessible coarse 3D      
+            knowledge to enhance the prompts and guide 2D lifting optimization for refinement. In this paper, we propose <b>Sherpa3D</b>, a 
+            new text-to-3D framework that achieves high-fidelity, generalizability, and geometric consistency simultaneously. Specifically, 
+            we design a pair of guiding strategies derived from the coarse 3D prior generated by the 3D diffusion model: a structural 
+            guidance for geometric fidelity and a semantic guidance for 3D coherence. 
+            Employing the two types of guidance, the 2D diffusion model enriches the 3D content with diversified and high-quality results. 
+            Extensive experiments show the superiority of our Sherpa3D over the state-of-the-art text-to-3D methods in terms of quality and 
+            3D consistency.
+          </p>
+        </div>
+        <img src="./static/figs/teaser.png">
+        <div class="content has-text-justified">
+        <p>
+          Figure 1. <b>Gallery of Sherpa3D:</b> Blender rendering for various textured meshes from Sherpa3D, which is able to generate high-fidelity, 
+          diverse, and multi-view consistent 3D contents with input text prompts. Our method is also compatible with popular graphics engines.
+        </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Zero-shot 3D Generation</h2>
+      <p></p>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/myvideos/ironman.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+              Iron Man in his state-of-the-art suit, confidently standing,
+              looking ahead, ready for action.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay muted controls loop playsinline height="100%">
+              <source src="./static/myvideos/airspace.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+              Spaceship,futuristic design,sleek metal,glowing thrusters, 
+              flying in space.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/myvideos/camera.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+              A detailed and realistic 3D model of a vintage camera
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/myvideos/knight.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+              Detailed portrait of a noble knight, full armor, intricate
+              helmet design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/myvideos/corgi.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+              A DSLR photo of an adorable Corgi dog with a wagging tail.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/myvideos/angel.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+              A statue of a angel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/myvideos/robot.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+              A futuristic battle robot, heavily armed, amidst a post- apocalyptic 
+              urban wasteland.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/myvideos/helmet.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+              A 3D model of A Darth Vader helmet, highly detailed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/myvideos/arm.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+              A cybernetic biomechanical arm, with a blend of organic
+              and mechanical elements.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="columns is-centered has-text-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/myvideos/lion.mp4"
+                      type="video/mp4">
+            </video>
+            <p>
+              Hyper-realistic image of a snow leopard, capturing its
+              camouflage and majestic stance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Mesh Animations</h2>
+      <p></p>
+    </div>
+
+    <p class="content has-text-centered is-size-5">
+      The mesh generated by Sherpa3D can be animated by <a href="https://www.mixamo.com/">Mixamo</a>.
+    </p>
+
+    <div class="level">
+      <div class="level-item">
+        <model-viewer src="./static/meshes/ironman1.glb" poster="./static/meshes/ironman.png" style="width: 100%; height: 300px;" autoplay shadow-intensity="1" camera-controls touch-action="pan-y" camera-target="0m 1m 0m" camera-orbit="0deg 75deg 50%" ></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="./static/meshes/ironman2.glb" poster="./static/meshes/ironman.png" style="width: 100%; height: 300px;" autoplay shadow-intensity="1" camera-controls touch-action="pan-y" camera-target="0m 1m 0m" camera-orbit="0deg 75deg 50%"></model-viewer>
+      </div>
+      <!-- <div class="level-item">
+        <model-viewer src="./static/meshes/ironman3.glb" poster="./static/meshes/ironman.png" style="width: 100%; height: 300px;" autoplay shadow-intensity="1" camera-controls touch-action="pan-y" camera-target="0m 1m 0m" camera-orbit="0deg 75deg 50%"></model-viewer>
+      </div> -->
+      <div class="level-item">
+        <model-viewer src="./static/meshes/robot1.glb" poster="./static/meshes/robot.png" style="width: 100%; height: 300px;" autoplay shadow-intensity="1" camera-controls touch-action="pan-y" camera-target="0m 1m 0m" camera-orbit="0deg 75deg 50%"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="./static/meshes/robot2.glb" poster="./static/meshes/robot.png" style="width: 100%; height: 300px;" autoplay shadow-intensity="1" camera-controls touch-action="pan-y" camera-target="0m 1m 0m" camera-orbit="0deg 75deg 50%"></model-viewer>
+      </div>
+    </div>
+
+    <!-- <div class="level">
+      <div class="level-item">
+        <model-viewer src="./static/meshes/robot1.glb" poster="./static/meshes/robot.png" style="width: 100%; height: 300px;" autoplay shadow-intensity="1" camera-controls touch-action="pan-y" camera-target="0m 1m 0m" camera-orbit="0deg 75deg 50%"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="./static/meshes/robot2.glb" poster="./static/meshes/robot.png" style="width: 100%; height: 300px;" autoplay shadow-intensity="1" camera-controls touch-action="pan-y" camera-target="0m 1m 0m" camera-orbit="0deg 75deg 50%"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="./static/meshes/robot3.glb" poster="./static/meshes/robot.png" style="width: 100%; height: 300px;" autoplay shadow-intensity="1" camera-controls touch-action="pan-y" camera-target="0m 1m 0m" camera-orbit="0deg 75deg 50%"></model-viewer>
+      </div>
+    </div> -->
+    
+    
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            Given a text as input, we first prompt 3D diffusion to build a coarse 3D prior M encoded in the geometry model (e.g., DMTet). 
+            Next, we render the normal map of the extracted mesh in DMTet and derive two guiding strategies from M: 
+            Structural Guidance: We utilize the structural descriptor to compute salient geometric features for preserving geometry fidelity (e.g., without a 
+            pockmarked face problem); Semantic Guidance: We leverage a semantic encoder (e.g., CLIP) to extract high-level information for keeping 3D 
+            consistency (e.g., without multi-face issues). 
+            Employing the two guidance in 2D lifting process, we use the normal map as shape encoding of the 2D diffusion model and unleash its power to 
+            generate high-quality and diversified results with 3D coherence. 
+            Then we achieve the final 3D results via photorealistic rendering through appearance modeling. 
+            <i>("Everest's summit eludes many without <b>Sherpa</b>.")</i>
+        </p>        
+        </div>
+        <img src="./static/figs/final_pipeline_00.png">
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+
+
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{liu2023sherpa3d,
+      title={Sherpa3D: Boosting High-Fidelity Text-to-3D Generation via Coarse 3D Prior},
+      author={Fangfu Liu and Diankun Wu and Yi Wei and Yongming Rao and Yueqi Duan},
+      journal={arXiv preprint arXiv:2312.06655},
+      year={2023}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>This website is constructed using the source code provided by <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, and we are grateful for their template.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
