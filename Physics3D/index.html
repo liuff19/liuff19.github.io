@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-    content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+    content=".">
+  <meta name="keywords" content="Gaussian, Physics, Simulation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PhysGaussian: Physics-Integrated 3D Gaussians for Generative Dynamics</title>
+  <title>Physics3D: Learning Physical Properties of 3D Gaussians via Video Diffusion</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -50,35 +50,32 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">PhysGaussian: Physics-Integrated 3D Gaussians for Generative
-              Dynamics</h1>
-            <h2 class="subtitle is-3 publication-subtitle">CVPR 2024</h2>
+            <h1 class="title is-1 publication-title">Physics3D: Learning Physical Properties of 3D Gaussians via Video Diffusion</h1>
+            <h2 class="subtitle is-3 publication-subtitle"></h2>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://xpandora.github.io/">Tianyi Xie</a><sup>1*</sup>,</span>
+                <a href="https://xpandora.github.io/"></a><sup></sup>,</span>
               <span class="author-block">
-                <a href="https://www.math.ucla.edu/~zeshunzong/">Zeshun Zong</a><sup>1*</sup>,</span>
+                <a href="https://www.math.ucla.edu/~zeshunzong/"></a><sup></sup>,</span>
               <span class="author-block">
-                <a href="https://yuxingqiu.github.io/">Yuxing Qiu</a><sup>1*</sup>,
+                <a href="https://yuxingqiu.github.io/"></a><sup></sup>,
               </span>
               <span class="author-block">
-                <a href="https://xuan-li.github.io/">Xuan Li</a><sup>1*</sup>,
+                <a href="https://xuan-li.github.io/"></a><sup></sup>,
               </span>
               <span class="author-block">
-                <a href="https://fytalon.github.io/">Yutao Feng</a><sup>2,3</sup>,
+                <a href="https://fytalon.github.io/"></a><sup></sup>,
               </span>
               <span class="author-block">
-                <a href="https://yangzzzy.github.io/">Yin Yang</a><sup>3</sup>,
+                <a href="https://yangzzzy.github.io/"></a><sup></sup>,
               </span>
               <span class="author-block">
-                <a href="https://www.math.ucla.edu/~cffjiang/">Chenfanfu Jiang</a><sup>1</sup>
+                <a href="https://www.math.ucla.edu/~cffjiang/"></a><sup></sup>
               </span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>University of California, Los Angeles,</span>
-              <span class="author-block"><sup>2</sup>Zhejiang University,</span>
-              <span class="author-block"><sup>3</sup>University of Utah</span>
+              <span class="author-block"><sup>1</sup>Tsinghua University</span>
             </div>
             <div class="is-size-5 publication-authors">
               <span class="author-block"><sup>*</sup>Equal Contributions</span>
@@ -97,7 +94,7 @@
                 </a>
               </span> -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2311.12198" class="external-link button is-normal is-rounded is-dark">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -106,7 +103,7 @@
                 </span>
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/XPandora/PhysGaussian"
+                  <a href=""
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -129,10 +126,9 @@
         <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
           <source src="./static/videos/teaser.mp4" type="video/mp4">
         </video> -->
-        <img src="./static/images/teaser-1.jpg" class="interpolation-image" />
+        <img src="./static/images/teaser.png" class="interpolation-image" />
         <h2 class="subtitle has-text-centered">
-          <span class="dnerf">PhysGaussian</span> is a pioneering unified simulation-rendering pipeline that generates
-          physics-based dynamics and photo-realistic renderings simultaneously and seamlessly.
+          <span class="dnerf">Physics3D</span> is a unified simulation-rendering pipeline based on 3D Gaussians, which learn physics dynamics from video diffusion model.
         </h2>
       </div>
     </div>
@@ -180,20 +176,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We introduce <strong>PhysGaussian</strong>, a new method that seamlessly integrates physically grounded
-              Newtonian dynamics
-              within 3D Gaussians to achieve high-quality novel motion synthesis. Employing a customized Material Point
-              Method (MPM), our approach enriches 3D Gaussian kernels with physically meaningful kinematic deformation
-              and mechanical stress attributes, all evolved in line with continuum mechanics principles. A defining
-              characteristic of our method is the seamless integration between physical simulation and visual rendering:
-              both components utilize the same 3D Gaussian kernels as their discrete representations. This negates the
-              necessity for triangle/tetrahedron meshing, marching cubes, ''cage meshes,'' or any other geometry
-              embedding, highlighting the principle of ''what you see is what you simulate (WS<sup>2</sup>).''
-            </p>
-            <p>
-              Our method demonstrates exceptional versatility across a wide variety of materials--including elastic
-              entities, plastic metals, non-Newtonian fluids, and granular materials--showcasing its strong capabilities
-              in creating diverse visual content with novel viewpoints and movements.
+              In recent years, there has been rapid development in 3D generation models, opening up new possibilities for applications such as simulating the dynamic movements of 3D objects and customizing their behaviors. However, current 3D generative models tend to focus only on surface features such as color and shape, neglecting the inherent physical properties that govern the behavior of objects in the real world. To accurately simulate physics-aligned dynamics, it is essential to predict the physical properties of materials and incorporate them into the behavior prediction process. Nonetheless, predicting the diverse materials of real-world objects is still challenging due to the complex nature of their physical attributes. In this paper, we propose <strong>Physics3D</strong>, a novel method for learning various physical properties of 3D objects through a video diffusion model. Our approach involves designing a highly generalizable physical simulation system based on a viscoelastic material model, which enables us to simulate a wide range of materials with high-fidelity capabilities. Moreover, we distill the physical priors from a video diffusion model that contains more understanding of realistic object materials.
             </p>
           </div>
         </div>
@@ -214,29 +197,21 @@
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Pipeline</h2>
-      <img src="./static/images/pipeline-1.jpg" class="interpolation-image" />
+      <img src="./static/images/pipeline.png" class="interpolation-image" />
       <p>
-        Our approach consists of two phases: 3D Gaussian splatting reconstruction
-        and physics-integrated novel motion synthesis. The first phase is mainly adopted from the original GS framework,
-        which reconstructs a set of 3D Gaussian kernels renderable by point
-        splatting process, from a set of multi-view images, associated camera information, and an optional initial
-        sparse surface point cloud constructed by COLMAP. We
-        additionally regularize this reconstruction process with an anisotropic loss term if needed to avoid over-skinny
-        Gaussian kernels.
-        The second phase directly views the Gaussian ellipsoids as the simulatable particle discretization of the scene
-        for MPM simulation. Enabled by MPM solver for continuum mechanics and our
-        novel kinematics for Gaussian kernels and spherical harmonics, the scene can undergo physics-aware deformations
-        and maintain photo-realistic rendering
-        quality simultaneously and seamlessly. For better physics compliance, we also perform Gaussian kernel internal
-        filling to capture the internal deformation of the object as needed.
+        Given an object represented as 3D Gaussians, We first simulate it using the Material Point Method (MPM). 
+        The simulation comprises two distinct components: an elastoplastic part and a viscoelastic part. 
+        These components operate independently to calculate the individual stresses within the object and are combined to determine the overall stress. 
+        After the simulation, a series of Gaussians with varying orientations are generated, reflecting the dynamic evolution of the scene. 
+        Then, we render these Gaussians from a fixed viewpoint to produce a sequence of video frames. 
+        Finally, we utilize a pretrained video diffusion model with Score Distillation Sampling (SDS) strategy to iteratively optimize physical parameters.
       </p>
     </div>
   </section>
 
-  <section class="section">
+  <!-- <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Physics-Integrated Gaussians</h2>
-      <!-- <div class="col-md-8 col-md-offset-2"> -->
       <p>
         We introduce a continuum mechanics-based strategy tailored for 3D Gaussian kernels.
       </p>
@@ -246,7 +221,6 @@
           src="./static/videos/vasedeck_comparison.mp4" onplay="resizeAndPlay(this)"></video>
         <canvas height=0 class="videoMerge" id="materialsMerge"></canvas>
       </div>
-      <!-- </div> -->
     </div>
   </section>
 
@@ -260,15 +234,13 @@
         preservation.
       </p>
       <br>
-      <!-- <div class="col-md-8 col-md-offset-2"> -->
       <div class="content has-text-centered">
         <video id="replay-video" controls muted preload playsinline autoplay loop width="75%">
           <source src="./static/videos/materials_cropped.mp4" type="video/mp4">
         </video>
       </div>
-      <!-- </div> -->
     </div>
-  </section>
+  </section> -->
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -292,7 +264,7 @@
           <div class="content">
             <h4 class="title is-size-5" style="text-align: center;">Plastic Metal</h4>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/can.mp4" type="video/mp4">
+              <source src="./static/videos/ball.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -303,7 +275,7 @@
           <div class="content">
             <h4 class="title is-size-5" style="text-align: center;">Fracture</h4>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/bread.mp4" type="video/mp4">
+              <source src="./static/videos/pampass.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -312,7 +284,7 @@
           <div class="content">
             <h4 class="title is-size-5" style="text-align: center;">Granular Material</h4>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/wolf.mp4" type="video/mp4">
+              <source src="./static/videos/telephone.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -323,7 +295,7 @@
           <div class="content">
             <h4 class="title is-size-5" style="text-align: center;">Viscoplastic Fluids</h4>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/cake.mp4" type="video/mp4">
+              <source src="./static/videos/hat.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -332,7 +304,7 @@
           <div class="content">
             <h4 class="title is-size-5" style="text-align: center;">Collision</h4>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/pillow2sofa.mp4" type="video/mp4">
+              <source src="./static/videos/towel.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -378,16 +350,59 @@
     </div>
   </section>
 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Comparison</h2>
+      <p>
+        We compare results before and after optimization.
+      </p>
+      <br>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h4 class="title is-size-5" style="text-align: center;">before Optimization</h4>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/towel_pre.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h4 class="title is-size-5" style="text-align: center;">After Optimization</h4>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/towel.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h4 class="title is-size-5" style="text-align: center;">before Optimization</h4>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/ball_pre.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h4 class="title is-size-5" style="text-align: center;">After Optimization</h4>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/ball.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{xie2023physgaussian,
-      title={PhysGaussian: Physics-Integrated 3D Gaussians for Generative Dynamics}, 
-      author={Xie, Tianyi and Zong, Zeshun and Qiu, Yuxing and Li, Xuan and Feng, Yutao and Yang, Yin and Jiang, Chenfanfu},
-      journal={arXiv preprint arXiv:2311.12198},
-      year={2023},
-}</code></pre>
+      <pre><code></code></pre>
     </div>
   </section>
 
