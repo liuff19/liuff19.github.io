@@ -247,7 +247,8 @@
       <h2 class="title is-3">Material Versatility</h2>
       <p>
         We show the versatility of our approach across a wide range of materials, including elastic entities,
-        plastic metals, non-Newtonian fluids, and granular materials.
+        plastic metals, non-Newtonian fluids, and granular materials. 
+        Physics3D achieves high-fidelity and realistic performance in a wide range of materials.
       </p>
       <br>
       <div class="columns is-centered">
@@ -354,23 +355,40 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3">Comparison with baselines</h2>
       <p>
-        Visual comparison between our synthesized videos and baseline methods (DreamGaussian4D and PhysGaussian).
+        Visual comparison between our synthesized videos and baseline methods (PhysDreamer, DreamGaussian4D and PhysGaussian). 
+        We show that Physics3D is able to generate realistic scene movement while maintaining good motion consistency.
       </p>
       <br>
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h5 class="title is-size-5" style="text-align: center;">Real Capture	  Ours    PhysDreamer    PhysGaussian    DreamGaussian4D</h4>
+            <!-- <h5 class="title is-size-5" style="text-align: center;">Real Capture	  Ours    PhysDreamer    PhysGaussian    DreamGaussian4D</h4> -->
+            <tr>
+                <th style="text-align: center;width: 25%;">Real Capture</th>
+                <th style="text-align: center;width: 25%;">Ours</th>
+                <th style="text-align: center;width: 25%;">PhysDreamer</th>
+                <th style="text-align: center;width: 25%;">PhysGaussian</th>
+                <th style="text-align: center;width: 25%;">DreamGaussian4D</th>
+            </tr>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/compare_telephone.mp4" type="video/mp4">
             </video>
           </div>
         </div>
+      </div>
 
+      <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h5 class="title is-size-5" style="text-align: center;">Real Capture	  Ours    PhysDreamer    PhysGaussian    DreamGaussian4D</h4>
-              <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <!-- <h5 class="title is-size-5" style="text-align: center;">Real Capture	  Ours    PhysDreamer    PhysGaussian    DreamGaussian4D</h4> -->
+            <tr>
+              <th style="text-align: center;width: 25%;">Real Capture</th>
+              <th style="text-align: center;width: 25%;">Ours</th>
+              <th style="text-align: center;width: 25%;">PhysDreamer</th>
+              <th style="text-align: center;width: 25%;">PhysGaussian</th>
+              <th style="text-align: center;width: 25%;">DreamGaussian4D</th>
+            </tr>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/compare_hat.mp4" type="video/mp4">
             </video>
           </div>
@@ -382,7 +400,7 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3">Ablation</h2>
       <p>
-        We compare results before and after optimization.
+        We compare results before and after optimization. We observe that both elastic and plastic random init can be well optimized to fit the real-world object.
       </p>
       <br>
       <div class="columns is-centered">
