@@ -54,23 +54,20 @@
             <h2 class="subtitle is-3 publication-subtitle"></h2>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://xpandora.github.io/"></a><sup></sup>,</span>
+                <a href="https://liuff19.github.io/">Fangfu Liu</a><sup>*1</sup>,</span>
               <span class="author-block">
-                <a href="https://www.math.ucla.edu/~zeshunzong/"></a><sup></sup>,</span>
+                <a href="">Hanyang Wang</a><sup>*1</sup>,</span>
               <span class="author-block">
-                <a href="https://yuxingqiu.github.io/"></a><sup></sup>,
+                <a href="">Shunyu Yao</a><sup>2</sup>,
               </span>
               <span class="author-block">
-                <a href="https://xuan-li.github.io/"></a><sup></sup>,
+                <a href="">Shengjun Zhang</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://fytalon.github.io/"></a><sup></sup>,
+                <a href="">Jie Zhou</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://yangzzzy.github.io/"></a><sup></sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://www.math.ucla.edu/~cffjiang/"></a><sup></sup>
+                <a href="https://duanyueqi.github.io/">Yueqi Duan</a><sup>1</sup>
               </span>
             </div>
 
@@ -78,8 +75,11 @@
               <span class="author-block"><sup>1</sup>Tsinghua University</span>
             </div>
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>*</sup>Equal Contributions</span>
+              <span class="author-block"><sup>2</sup>Stanford University</span>
             </div>
+            <!-- <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal Contributions</span>
+            </div> -->
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -116,20 +116,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
-          <source src="./static/videos/teaser.mp4" type="video/mp4">
-        </video> -->
-        <img src="./static/images/teaser.png" class="interpolation-image" />
-        <h2 class="subtitle has-text-centered">
-          <span class="dnerf">Physics3D</span> is a unified simulation-rendering pipeline based on 3D Gaussians, which learn physics dynamics from video diffusion model.
-        </h2>
       </div>
     </div>
   </section>
@@ -181,16 +167,20 @@
           </div>
         </div>
       </div>
-      <!-- Paper video. -->
-      <!-- <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="publication-video">
-            <iframe src="https://drive.google.com/file/d/1eh7vxRxer7gfvPhs8jDE56oRjayBc9oe/preview"
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div> -->
-      <!--/ Paper video. -->
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/teaser.mp4" type="video/mp4">
+        </video> -->
+        <img src="./static/images/teaser.png" class="interpolation-image" />
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">Physics3D</span> is a unified simulation-rendering pipeline based on 3D Gaussians, which learn physics dynamics from video diffusion model.
+        </h2>
+      </div>
     </div>
   </section>
 
@@ -209,52 +199,19 @@
     </div>
   </section>
 
-  <!-- <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Physics-Integrated Gaussians</h2>
-      <p>
-        We introduce a continuum mechanics-based strategy tailored for 3D Gaussian kernels.
-      </p>
-      <br>
-      <div class="video-compare-container" id="materialsDiv">
-        <video class="video" id="materials" loop playsinline autoPlay muted
-          src="./static/videos/vasedeck_comparison.mp4" onplay="resizeAndPlay(this)"></video>
-        <canvas height=0 class="videoMerge" id="materialsMerge"></canvas>
-      </div>
-    </div>
-  </section>
-
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Flexible Dynamics</h2>
+      <h2 class="title is-3">Visual Results</h2>
       <p>
-        Our method also supports flexible control of dynamics via material parameters. A larger Young's modulus \(E\)
-        (from right to left)
-        indicates higher stiffness while a larger poission ratio \(\nu\) (from top to bottom) leads to better volume
-        preservation.
-      </p>
-      <br>
-      <div class="content has-text-centered">
-        <video id="replay-video" controls muted preload playsinline autoplay loop width="75%">
-          <source src="./static/videos/materials_cropped.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </section> -->
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Material Versatility</h2>
-      <p>
-        We show the versatility of our approach across a wide range of materials, including elastic entities,
-        plastic metals, non-Newtonian fluids, and granular materials. 
+        We show the visual results of our approach across a wide range of materials, including elastic entities,
+        plastic metals, and fibre materials. 
         Physics3D achieves high-fidelity and realistic performance in a wide range of materials.
       </p>
       <br>
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h4 class="title is-size-5" style="text-align: center;">Sway</h4>
+            <!-- <h4 class="title is-size-5" style="text-align: center;">Sway</h4> -->
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/ficus.mp4" type="video/mp4">
             </video>
@@ -263,9 +220,9 @@
 
         <div class="column">
           <div class="content">
-            <h4 class="title is-size-5" style="text-align: center;">Collision</h4>
+            <!-- <h4 class="title is-size-5" style="text-align: center;">Collision</h4> -->
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/ball.mp4" type="video/mp4">
+              <source src="./static/videos/basketball.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -274,16 +231,16 @@
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h4 class="title is-size-5" style="text-align: center;">Fibre</h4>
+            <!-- <h4 class="title is-size-5" style="text-align: center;">Fibre</h4> -->
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/pampass.mp4" type="video/mp4">
+              <source src="./static/videos/alocasia_7.mp4" type="video/mp4">
             </video>
           </div>
         </div>
 
         <div class="column">
           <div class="content">
-            <h4 class="title is-size-5" style="text-align: center;">Rubber Spring</h4>
+            <!-- <h4 class="title is-size-5" style="text-align: center;">Rubber Spring</h4> -->
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/telephone.mp4" type="video/mp4">
             </video>
@@ -294,7 +251,7 @@
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h4 class="title is-size-5" style="text-align: center;">Elastic Entity</h4>
+            <!-- <h4 class="title is-size-5" style="text-align: center;">Elastic Entity</h4> -->
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/cotton.mp4" type="video/mp4">
             </video>
@@ -303,51 +260,12 @@
 
         <div class="column">
           <div class="content">
-            <h4 class="title is-size-5" style="text-align: center;">Fabric</h4>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/towel.mp4" type="video/mp4">
+              <source src="./static/videos/carnation_27.mp4" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
-
-      <!--/ Matting. -->
-
-
-      <!-- Concurrent Work. -->
-      <!-- <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Related Links</h2>
-
-          <div class="content has-text-justified">
-            <p>
-              There's a lot of excellent work that was introduced around the same time as ours.
-            </p>
-            <p>
-              <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an
-              idea similar to our windowed position encoding for coarse-to-fine optimization.
-            </p>
-            <p>
-              <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a
-                href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-              both use deformation fields to model non-rigid scenes.
-            </p>
-            <p>
-              Some works model videos with a NeRF by directly modulating the density, such as <a
-                href="https://video-nerf.github.io/">Video-NeRF</a>, <a
-                href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a
-                href="https://neural-3d-video.github.io/">DyNeRF</a>
-            </p>
-            <p>
-              There are probably many more by the time you are reading this. Check out <a
-                href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a
-                href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-            </p>
-          </div>
-        </div>
-      </div> -->
-      <!--/ Concurrent Work. -->
-
     </div>
   </section>
 
@@ -362,10 +280,9 @@
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <!-- <h5 class="title is-size-5" style="text-align: center;">Real Capture	  Ours    PhysDreamer    PhysGaussian    DreamGaussian4D</h4> -->
-              <table style="margin-left: auto; margin-right: auto; width: 90%;">
-                <tbody>
-                  <tr>
+            <table style="margin-left: auto; margin-right: auto; width: 90%;">
+              <tbody>
+                <tr>
                   <th style="text-align: center;width: 25%;">Real Capture</th>
                   <th style="text-align: center;width: 25%;">Ours</th>
                   <th style="text-align: center;width: 25%;">PhysDreamer</th>
@@ -373,9 +290,18 @@
                   <th style="text-align: center;width: 25%;">DreamGaussian4D</th>
                 </tr>
                 <tr>
-                    <td rowspan="1" colspan="5" style="width: 100%">
+                    <td rowspan="4" colspan="5" style="width: 100%">
+                      <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="./static/videos/compare_alocasia.mp4" type="video/mp4">
+                      </video>
+                      <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="./static/videos/compare_carnation.mp4" type="video/mp4">
+                      </video>
                       <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
                         <source src="./static/videos/compare_telephone.mp4" type="video/mp4">
+                      </video>
+                      <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                        <source src="./static/videos/compare_hat.mp4" type="video/mp4">
                       </video>
                     </td>
                 </tr>
@@ -385,13 +311,12 @@
         </div>
       </div>
 
-      <div class="columns is-centered">
+      <!-- <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <!-- <h5 class="title is-size-5" style="text-align: center;">Real Capture	  Ours    PhysDreamer    PhysGaussian    DreamGaussian4D</h4> -->
-              <table style="margin-left: auto; margin-right: auto; width: 90%;">
-                <tbody>
-                  <tr>
+            <table style="margin-left: auto; margin-right: auto; width: 90%;">
+              <tbody>
+                <tr>
                   <th style="text-align: center;width: 25%;">Real Capture</th>
                   <th style="text-align: center;width: 25%;">Ours</th>
                   <th style="text-align: center;width: 25%;">PhysDreamer</th>
@@ -409,37 +334,43 @@
             </table>
           </div>
         </div>
-      </div>
+      </div> -->
   </section>
 
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Ablation</h2>
       <p>
-        We compare results before and after optimization. We observe that both elastic and plastic random init can be well optimized to fit the real-world object.
+        We compare results w/ and w/o viscoelastic part. We observe that with both elastoplastic and viscoelastic parts can fit the real-world object better.
       </p>
       <br>
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h4 class="title is-size-5" style="text-align: center;">before Optimization</h4>
+            <h4 class="title is-size-5" style="text-align: center;">w/o viscoelastic part</h4>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/towel_pre.mp4" type="video/mp4">
+            </video>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/cotton_pre.mp4" type="video/mp4">
             </video>
           </div>
         </div>
 
         <div class="column">
           <div class="content">
-            <h4 class="title is-size-5" style="text-align: center;">After Optimization</h4>
+            <h4 class="title is-size-5" style="text-align: center;">w viscoelastic part (ours)</h4>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/towel.mp4" type="video/mp4">
+            </video>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/cotton.mp4" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
 
-      <div class="columns is-centered">
+      <!-- <div class="columns is-centered">
         <div class="column">
           <div class="content">
             <h4 class="title is-size-5" style="text-align: center;">before Optimization</h4>
@@ -458,7 +389,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 
   <section class="section" id="BibTeX">
