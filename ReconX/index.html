@@ -249,6 +249,70 @@
 </section>
   
 
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Overview</h2>
+          <div class="content has-text-justified">
+
+            <p>
+              While novel view synthesis (NVS) from a sparse set of images has made substantial progress in 3D computer vision, it requires an accurate initial estimation of camera parameters using Structure-from-Motion (SfM). However, SfM processes are time-consuming and prove unreliable in sparse-view scenarios where matched features are scarce. Moreover, the recent  point-based representation (3D Gaussian Splatting or 3D-GS) is substantially dependent on the precision of SfM outcomes, leading to significant accumulated errors and limited generalization capability across varied datasets. In this study, we introduce a novel and streamlined framework to enhance robust NVS from sparse-view images.
+            </p>
+            <p>
+              Our framework, <strong>InstantSplat</strong>, integrates dense stereo predictions with point-based representations to construct 3D Gaussians of large-scale scenes from sparse-view data within seconds. Specifically, InstantSplat generates densely populated surface points across all training views and determines the initial camera parameters using pixel-aligned points. Nonetheless, the non-uniform distribution of initial points from all pixels results in an excessive number of Gaussians,  ielding a sub-optimal scene representation that compromises rendering speed and quality. To address this issue, we employ a highly efficient grid-based, confidence-aware Farthest Point Sampling to strategically position point primitives at representative locations in parallel. Having the uniformly sampled surface points, we can initialize densely covered Gaussians and adopt a streamlined optimization framework to adapt the camera parameters and attributes of 3D Gaussians efficiently, instead of utilizing the complex Adaptive Density Control with manually tuned hyperparameters in 3D-GS. InstantSplat achieves a substantial reduction in training time, from <u></u>hours to mere seconds</u>, and demonstrates robust performance across various numbers of views in diverse datasets.
+            </p>
+
+
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+      <div class="column is-four-fifths"></div>
+      <div class="has-text-centered">
+        <h2 class="title is-3">Video</h2>
+        <!-- TODO replace the place holder video with the correct video and delete the plaveholder video from folder -->
+        <video controls>
+          <source src="static/videos/demo1.mp4" type="video/mp4">
+          <!-- <source src="static/videos/InstantSplat.mp4" type="video/mp4"> -->
+          Your browser does not support the video.
+        </video>
+        <!-- The following is the way to insert through link -->
+        <!-- <div class="publication-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/470hul75bSM?si=7F9NL8zWbU9GtqHb"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+         encrypted-media; " allowfullscreen></iframe> -->
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method Overview</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/arc.png">
+
+            <p><strong>Overall Framework of InstantSplat</strong>. Beginning with sparse, unposed images, we generate a pixel-wise multi-view stereo dense point cloud utilizing
+              an off-the-shelf model along with computed initial camera poses. We conduct Adaptive Dense Surface Initialization employing a voxel-wise, confidence-aware
+              point downsampler to minimize redundancy and achieve uniform sampling. A streamlined Joint Optimization process without ADC is then implemented to
+              adjust the Gaussian and camera parameters, ensuring consistency across multi-view images. All these processes are executed in a matter of seconds.</p>
+
+          </div>
+        </div>
+      </div>
+      <!--/ Concurrent Work. -->
+
+    </div>
+  </section>
+
+
   <section class="hero is-light is-small">
     <div class="hero-body">
       <div class="container">
@@ -331,74 +395,6 @@
       </div>
     </div>
   </section>
-    
-
-
-
-
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Overview</h2>
-          <div class="content has-text-justified">
-
-            <p>
-              While novel view synthesis (NVS) from a sparse set of images has made substantial progress in 3D computer vision, it requires an accurate initial estimation of camera parameters using Structure-from-Motion (SfM). However, SfM processes are time-consuming and prove unreliable in sparse-view scenarios where matched features are scarce. Moreover, the recent  point-based representation (3D Gaussian Splatting or 3D-GS) is substantially dependent on the precision of SfM outcomes, leading to significant accumulated errors and limited generalization capability across varied datasets. In this study, we introduce a novel and streamlined framework to enhance robust NVS from sparse-view images.
-            </p>
-            <p>
-              Our framework, <strong>InstantSplat</strong>, integrates dense stereo predictions with point-based representations to construct 3D Gaussians of large-scale scenes from sparse-view data within seconds. Specifically, InstantSplat generates densely populated surface points across all training views and determines the initial camera parameters using pixel-aligned points. Nonetheless, the non-uniform distribution of initial points from all pixels results in an excessive number of Gaussians,  ielding a sub-optimal scene representation that compromises rendering speed and quality. To address this issue, we employ a highly efficient grid-based, confidence-aware Farthest Point Sampling to strategically position point primitives at representative locations in parallel. Having the uniformly sampled surface points, we can initialize densely covered Gaussians and adopt a streamlined optimization framework to adapt the camera parameters and attributes of 3D Gaussians efficiently, instead of utilizing the complex Adaptive Density Control with manually tuned hyperparameters in 3D-GS. InstantSplat achieves a substantial reduction in training time, from <u></u>hours to mere seconds</u>, and demonstrates robust performance across various numbers of views in diverse datasets.
-            </p>
-
-
-          </div>
-        </div>
-      </div>
-      <!--/ Abstract. -->
-      <div class="column is-four-fifths"></div>
-      <div class="has-text-centered">
-        <h2 class="title is-3">Video</h2>
-        <!-- TODO replace the place holder video with the correct video and delete the plaveholder video from folder -->
-        <video controls>
-          <source src="static/videos/demo1.mp4" type="video/mp4">
-          <!-- <source src="static/videos/InstantSplat.mp4" type="video/mp4"> -->
-          Your browser does not support the video.
-        </video>
-        <!-- The following is the way to insert through link -->
-        <!-- <div class="publication-video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/470hul75bSM?si=7F9NL8zWbU9GtqHb"
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-         encrypted-media; " allowfullscreen></iframe> -->
-      </div>
-    </div>
-    </div>
-  </section>
-
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Concurrent Work. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Method Overview</h2>
-          <div class="content has-text-justified">
-            <img src="./static/images/arc.png">
-
-            <p><strong>Overall Framework of InstantSplat</strong>. Beginning with sparse, unposed images, we generate a pixel-wise multi-view stereo dense point cloud utilizing
-              an off-the-shelf model along with computed initial camera poses. We conduct Adaptive Dense Surface Initialization employing a voxel-wise, confidence-aware
-              point downsampler to minimize redundancy and achieve uniform sampling. A streamlined Joint Optimization process without ADC is then implemented to
-              adjust the Gaussian and camera parameters, ensuring consistency across multi-view images. All these processes are executed in a matter of seconds.</p>
-
-          </div>
-        </div>
-      </div>
-      <!--/ Concurrent Work. -->
-
-    </div>
-  </section>
-
 
 
   <section class="section">
