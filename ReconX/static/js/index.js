@@ -30,13 +30,14 @@ $(document).ready(function() {
     });
 
     var options = {
-			slidesToScroll: 1,
-			slidesToShow: 3,
-			loop: true,
-			infinite: true,
-			autoplay: false,
-			autoplaySpeed: 3000,
-    }
+    slidesToScroll: 1,
+    slidesToShow: 2,
+    centerMode: true, // Enable center mode
+    loop: true,
+    infinite: true,
+    autoplay: false,
+    autoplaySpeed: 3000,
+};
 
 		// Initialize all div with carousel class
     var carousels = bulmaCarousel.attach('.carousel', options);

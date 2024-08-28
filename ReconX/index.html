@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-55V1E709SK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-55V1E709SK');
+  </script>
+
   <meta charset="utf-8">
+  <meta name="description"
+    content="ReconX, unleashes the strong generative prior of video diffusion model for sparse-view 3D scene reconstruction. ">
+  <meta name="keywords" content="ReconX, Gaussian Splatting, Video Diffusion Model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
-  <title>ReconX: Reconstruct Any Scene from Sparse Views with Video Diffusion Model</title>
+  <title>ReconX: Reconstruct Any Scene from Sparse Views with Video Diffusion Model
+  </title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -18,19 +32,16 @@
     gtag('js', new Date());
 
     gtag('config', 'G-PYVRSFMDRL');
-  </script> -->
+  </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -38,213 +49,185 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   <script src="./static/js/script.js"></script>
+
 </head>
+
 <body>
 
+  <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav> -->
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">ReconX: Reconstruct Any Scene from Sparse Views with Video Diffusion Model</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://liuff19.github.io/">Fangfu Liu*</a>,</span>
-            <span class="author-block">
-              <a href="https://liuff19.github.io/">Wenqiang Sun*</a>,</span>
-            <span class="author-block">
-              <a href="https://liuff19.github.io/">Hanyang Wang*</a>,</span>
-            <span class="author-block">
-              <a href="https://liuff19.github.io/">Yikai Wang</a>,</span>
-            <span class="author-block">
-              <a href="https://liuff19.github.io/">Haowen Sun</a>,</span>
-            <span class="author-block">
-                <a href="https://liuff19.github.io/">Junliang Ye</a>,</span>
-            <span class="author-block">
-                <a href="https://liuff19.github.io/">Jun Zhang</a>,</span>
-            <span class="author-block">
-              <a href="https://duanyueqi.github.io/">Yueqi Duan</a>
-            </span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Tsinghua University</span>
-          </div>
-        
-          <div class="is-size-5 publication-authors">
-            <span style="font-weight: bold;">Arxiv</span>
-          </div>
-          <div class="is-size-6 publication-authors">
-            <span class="author-block">* Equal Contribution. </span>
-          </div>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
+            <h1 class="title is-1 publication-title"><span
+                style="color: #4CAF50 ;font-weight: bolder;">InstantSplat</span>: Sparse-view SfM-free Gaussian Splatting in Seconds</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">  
+                <a href="https://zhiwenfan.github.io/">Zhiwen Fan</a><sup>1,2</sup><sup>*&dagger;</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=uQV5aCsAAAAJ&hl=zh-CN">Wenyan Cong</a><sup>1</sup><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/kairunwen">Kairun Wen</a><sup>3</sup><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://kevin-2017.github.io/">Kevin Wang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/zjrandom951">Jian Zhang</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=k5hVBfMAAAAJ&hl=en">Xinghao Ding</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://faculty.cc.gatech.edu/~danfei/">Danfei Xu</a><sup>2,4</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.borisivanovic.com/">Boris Ivanovic</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://web.stanford.edu/~pavone/">Marco Pavone</a><sup>2,5</sup>,</span>
+              <span class="author-block">
+                <a href="https://geopavlakos.github.io/">Georgios Pavlakos</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://vita-group.github.io/research.html">Zhangyang Wang</a><sup>1</sup></span>
+              <span class="author-block">
+                <a href="https://yuewang.xyz/">Yue Wang</a><sup>2,6</sup>,</span>
+          </div>
+
+          <!-- affiliations -->
+          <div class="subtitle is-size-5">
+          <!-- <div class="is-size-5 publication-authors"> -->
+            <sup>1</sup> The University of Texas at Austin &nbsp;
+            <sup>2</sup> Nvidia &nbsp;
+            <sup>3</sup> Xiamen University<br>
+            <sup>4</sup> Georgia Institute of Technology &nbsp;
+            <sup>5</sup> Stanford University &nbsp;
+            <sup>6</sup> University of Southern California<br>
+            <sup>*</sup> Equal Contribution
+            <sup>&dagger;</sup> Project Leader
+            <!-- <span class="author-block"><sup>1</sup>The University of Texas at Austin</span>
+            <span class="author-block"><sup>2</sup>Nvidia</span> <br>
+            <span class="author-block"><sup>3</sup>Xiamen University</span> <br>
+            <span class="author-block"><sup>4</sup>Georgia Institute of Technology</span> <br>
+            <span class="author-block"><sup>5</sup>Stanford University</span> <br>
+            <span class="author-block"><sup>6</sup>University of Southern California</span> <br>
+            <span class="author-block"><sup>*</sup>denotes equal contribution</span> -->
+          </div>
+
+          <!-- TODO: update paper and video link once upload -->
+          <div class="column has-text-centered">
+            <!-- <div class="publication-links"> -->
               <!-- PDF Link. -->
               <span class="link-block">
-                <!-- <a href="./static/pdfs/DreamCinema_paper.pdf" class="external-link button is-normal is-rounded is-dark"> -->
-                <a href="https://arxiv.org/pdf/2408.12601" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
+              <a href="https://arxiv.org/pdf/2403.20309.pdf"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2408.12601"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+              <a href="https://arxiv.org/abs/2403.20309"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://youtu.be/kwfRetxDgsg"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="https://www.youtube.com/watch?v=fxf_ypd7eD8" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fab fa-youtube"></i>
+                    <i class="fab fa-youtube"></i>
                   </span>
                   <span>Video</span>
                 </a>
               </span>
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href=""
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/chen-wl20/DreamCinema?tab=readme-ov-file"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="https://github.com/NVlabs/InstantSplat"
+                  class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fab fa-github"></i>
+                    <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
-                  </a>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/kairunwen/InstantSplat"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span>🤗 Demo</span>
+                </a>
               </span>
             </div>
 
-          </div>
+
+          <!-- Video Link. -->
+          <!-- <span class="link-block">
+                  <a href="https://youtu.be/470hul75bSM" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a> -->
+          </span>
+          <!-- Code Link. -->
+          <!-- <span class="link-block">
+                  <a href="https://github.com/VITA-Group/Instantsplat"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
         </div>
+
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="./static/figs/teaser.png" alt="Teaser Image" height="100%">
-      <h2 class="subtitle has-text-centered" style="font-family: 'Castoro', serif;">
-        <b>DreamCinema</b> is a user-friendly cinematic transfer framework that facilitates personal movie creation with free camera and desired characters.
-      </h2>
     </div>
-  </div>
-</section> -->
-<hr>
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Video</h2>
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/kwfRetxDgsg?rel=0&amp;showinfo=0"
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-      <!-- <video id="teaser" autoplay controls loop playsinline height="100%"> -->
-        <!-- <source src="static/myvideos/supp-video.mp4" type="video/mp4" /> -->
-      <!-- </video> -->
-      <h2 class="subtitle has-text-justified">
-        <b>DreamCinema</b> is a user-friendly cinematic transfer framework that facilitates personal movie creation with free camera and desired characters.
-      </h2>
     </div>
-  </div>
-</section>
-
-
-<hr>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We are living in a flourishing era of digital media, where everyone has the potential to become a personal filmmaker.
-            Current research on cinematic transfer empowers filmmakers to reproduce and manipulate the visual elements (<i>e.g.,</i> cinematography and character behaviors) from classic shots. However, characters in the reimagined films still rely on manual crafting, which involves significant technical complexity and high costs, making it unattainable for ordinary users. 
-            Furthermore, their estimated cinematography lacks smoothness due to inadequate capturing of inter-frame motion and modeling of physical trajectories.
-            Fortunately, the remarkable success of 2D and 3D AIGC has opened up the possibility of efficiently generating characters tailored to users' needs, diversifying cinematography. 
-            In this paper, we propose <b>DreamCinema</b>, a novel cinematic transfer framework that pioneers generative AI into the film production paradigm, aiming at facilitating user-friendly film creation. 
-            Specifically, we first extract cinematic elements (<i>i.e.,</i> human and camera pose) and optimize the camera trajectory. 
-            Then, we design a character generator to efficiently create 3D high-quality characters with a human structure prior. 
-            Finally, we develop a structure-guided motion transfer strategy to incorporate generated characters into film creation and transfer it via 3D graphics engines smoothly. 
-            Extensive experiments demonstrate the effectiveness of our method for creating high-quality films with free camera and 3D characters.
-          </p>
-        </div>
-        <img src="./static/figs/teaser.png" alt="Teaser Image" height="100%">
-        <!-- <img src="./static/figs/teaser-3d.png"> -->
-        <div class="content has-text-justified">
-        <p>
-          Figure 1. <b>DreamCinema</b> is a user-friendly cinematic transfer framework that facilitates personal movie creation with free camera and desired characters.
-        </p>
-        </div>
-      </div>
     </div>
+  </section>
 
 
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
-  </div>
-</section>
-
-
-<hr>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Method</h2>
-        <div class="content has-text-justified">
-          <p>
-            Our framework includes cinematic elements extraction, character generation, and cinematic transfer optimization.
-            The cinematic elements extraction estimates character motion and cinematography. 
-            The character generation module creates 3D characters tailored to user preferences with human structure prior. 
-            The cinematic transfer optimization integrates the extracted cinematic elements and the generated 3D characters with structure-guided motion transfer.
-            The complete pipeline is as follows: 
-        </p>        
-        </div>
-        <img src="./static/figs/pipeline.png">
-        <div class="content has-text-justified">
-        </div>
-      </div>
-    </div>
-
-
+  
 
   <section class="hero is-light is-small">
     <div class="hero-body">
@@ -252,381 +235,440 @@
         <div id="results-carousel" class=" carousel results-carousel">        
           <div class="item item-family">
             <video poster="" id="family" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/museum.mp4"
+              <source src="./static/videos/Family_3_view.mp4"
+                      type="video/mp4">
+            </video>
+          </div>          
+          <div class="item item-horse">
+            <video poster="" id="horse" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/Horse_3_view.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-family">
-            <video poster="" id="family" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/horse.mp4"
+          <div class="item item-barn">
+            <video poster="" id="barn" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/barn.mp4"
                       type="video/mp4">
             </video>
-          </div>            
+          </div>
+          <div class="item item-ignatius">
+            <video poster="" id="ignatius" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/ignatius.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-room">
+            <video poster="" id="room" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/5c3a_3_view.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-guanyin">
+            <video poster="" id="guanyin" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/ba55_3_view.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-car">
+            <video poster="" id="car" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/dac9_3_view.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+          <div class="item item-Mars0">
+            <video poster="" id="horse" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/Mars_0.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-Mars1">
+            <video poster="" id="horse" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/Mars_1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-sora3">
+            <video poster="" id="horse" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/sora_2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-sora2">
+            <video poster="" id="horse" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/sora_3.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-sora1">
+            <video poster="" id="horse" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/sora_1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
         </div>
-        <p>The results shown are derived from <strong> two input sparse views</strong>. Our method estimates poses, which are then interpolated to render the video.</p>
+        <p>The results shown are derived from <strong>3 training views</strong>. Our method estimates poses, which are then interpolated to render the video.</p>
+      </div>
+    </div>
+  </section>
+    
+
+
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Overview</h2>
+          <div class="content has-text-justified">
+
+            <p>
+              While novel view synthesis (NVS) from a sparse set of images has made substantial progress in 3D computer vision, it requires an accurate initial estimation of camera parameters using Structure-from-Motion (SfM). However, SfM processes are time-consuming and prove unreliable in sparse-view scenarios where matched features are scarce. Moreover, the recent  point-based representation (3D Gaussian Splatting or 3D-GS) is substantially dependent on the precision of SfM outcomes, leading to significant accumulated errors and limited generalization capability across varied datasets. In this study, we introduce a novel and streamlined framework to enhance robust NVS from sparse-view images.
+            </p>
+            <p>
+              Our framework, <strong>InstantSplat</strong>, integrates dense stereo predictions with point-based representations to construct 3D Gaussians of large-scale scenes from sparse-view data within seconds. Specifically, InstantSplat generates densely populated surface points across all training views and determines the initial camera parameters using pixel-aligned points. Nonetheless, the non-uniform distribution of initial points from all pixels results in an excessive number of Gaussians,  ielding a sub-optimal scene representation that compromises rendering speed and quality. To address this issue, we employ a highly efficient grid-based, confidence-aware Farthest Point Sampling to strategically position point primitives at representative locations in parallel. Having the uniformly sampled surface points, we can initialize densely covered Gaussians and adopt a streamlined optimization framework to adapt the camera parameters and attributes of 3D Gaussians efficiently, instead of utilizing the complex Adaptive Density Control with manually tuned hyperparameters in 3D-GS. InstantSplat achieves a substantial reduction in training time, from <u></u>hours to mere seconds</u>, and demonstrates robust performance across various numbers of views in diverse datasets.
+            </p>
+
+
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+      <div class="column is-four-fifths"></div>
+      <div class="has-text-centered">
+        <h2 class="title is-3">Video</h2>
+        <!-- TODO replace the place holder video with the correct video and delete the plaveholder video from folder -->
+        <video controls>
+          <source src="static/videos/demo1.mp4" type="video/mp4">
+          <!-- <source src="static/videos/InstantSplat.mp4" type="video/mp4"> -->
+          Your browser does not support the video.
+        </video>
+        <!-- The following is the way to insert through link -->
+        <!-- <div class="publication-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/470hul75bSM?si=7F9NL8zWbU9GtqHb"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+         encrypted-media; " allowfullscreen></iframe> -->
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method Overview</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/arc.png">
+
+            <p><strong>Overall Framework of InstantSplat</strong>. Beginning with sparse, unposed images, we generate a pixel-wise multi-view stereo dense point cloud utilizing
+              an off-the-shelf model along with computed initial camera poses. We conduct Adaptive Dense Surface Initialization employing a voxel-wise, confidence-aware
+              point downsampler to minimize redundancy and achieve uniform sampling. A streamlined Joint Optimization process without ADC is then implemented to
+              adjust the Gaussian and camera parameters, ensuring consistency across multi-view images. All these processes are executed in a matter of seconds.</p>
+
+          </div>
+        </div>
+      </div>
+      <!--/ Concurrent Work. -->
+
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Result</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/teaser_.png">
+            <p>Result on Tanks and Temples Benchmark</p>
+          </div>
+          <!-- <div class="content has-text-justified">
+            <img src="./static/images/cfgs_vs_ours.png">
+            <p>We study the impact of the training view number to the rendering quality. Comparisons are between our
+              model and CF-3DGS, on the Tanks and Temples dataset</p>
+          </div> -->
+        </div>
       </div>
     </div>
   </section>
 
-<hr>
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Cinematic Transfer Results</h2>
+
+  <section class="section">
+    <div class="container is-max-desktop ">
+      <div class=" has-text-centered">
+        <h2 class="title is-3">Visual Comparisons</h2>
         <div class="content has-text-justified">
           <p>
-            <b>Examples of cinematic transfer results.</b> We generate diverse characters with high quality and alignment to user preferences and selectively transfer these cinematic behavior (e.g. cinematography and character motions) to the new characters.
-        </p>        
+
+          </p>
         </div>
-        <img src="./static/figs/main_results.png">
-        <div class="content has-text-justified">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- <hr>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <Abstract. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3"> Alignment Comparison.</h2>
-        <div class="content has-text-justified">
-          <p>
-            <b>Quantative Comparison of Alignment.</b>We present the alignment visualization results, combining original shot with the extracted cinematic elements.
-        </p>        
-        </div>
-        <img src="./static/figs/comparison.png">
-        <div class="content has-text-justified">
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-
-<!-- <hr> -->
-<!-- 
-<section class="section">
-  <div class="container is-max-desktop">
-    Abstract.
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3"> More Application.</h2>
-        <div class="content has-text-justified">
-          <p>
-            <b>Flexible applications of DreamCinema:</b> (i) the reference shots restoration (ii) new film creation with extracted and generated elements.
-        </p>        
-        </div>
-        <img src="./static/figs/more_application.png">
-        <div class="content has-text-justified">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!- <section class="section">
-  <div class="container is-max-desktop">
-    <!- Abstract. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3"> More Results.</h2>
-        <div class="content has-text-justified">
-          <p>
-            <b>More examples of cinematic transfer results.</b>
-        </p>        
-        </div>
-        <img src="./static/figs/appendix.png">
-        <div class="content has-text-justified">
-        </div>
-      </div>
-    </div>
-  </div>
-</section> --> 
-<!-- 
-<hr>
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <h2 class="title is-3">Results</h2>
-      <p></p>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column content">
-        <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-          <source src="./static/myvideos/fight22.mp4"
-                  type="video/mp4">
-        </video>
-        <p>
-          Ip Man4, 2019.
-        </p>
-      </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column content">
-        <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-          <source src="./static/myvideos/freeman.mp4"
-                  type="video/mp4">
-        </video>
-        <p>
-          The Wild, 2007
-        </p>
-      </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column content">
-        <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-          <source src="./static/myvideos/threeman.mp4"
-                  type="video/mp4">
-        </video>
-        <p>
-          Batman vs. Superman, 2016
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section> -->
-
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <h2 class="title is-3">Mesh Animations</h2>
-      <p></p>
-    </div>
-
-    <p class="content has-text-centered is-size-5">
-      The mesh generated by Sherpa3D can be animated by <a href="https://www.mixamo.com/">Mixamo</a>.
-    </p>
-
-    <div class="level">
-
-
-
-
-    / Abstract. -->
-    <section class="section">
-      <div class="container is-max-desktop ">
-        <div class=" has-text-centered">
-          <h2 class="title is-3">Visual Comparisons</h2>
-          <div class="content has-text-justified">
-            <p>
-  
-            </p>
-          </div>
-          <div class="columns is-centered">
-            <!-- Visual Effects. -->
-            <div class="column">
-              <div class="content">
-                <div class="columns is-centered">
-                  <div class="column is-full-width">
-                    <div id="example1" class="bal-container-small">
-  
-                      <div class="bal-after">
-                        <img src="./static/images/comparison_n/Family/family_00006.png">
-                        <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                          Ours
-                        </div>
-                      </div>
-  
-                      <div class="bal-before" style="width:96.4968152866242%;">
-                        <div class="bal-before-inset" style="width: 512px;">
-                          <img src="./static/images/comparison_n/Family/0006_cf.png">
-                          <div class="bal-beforePosition beforeLabel">
-                            CF-3DGS [Fu 2023]
-                          </div>
-                        </div>
-                      </div>
-  
-                      <div class="bal-handle" style="left:96.4968152866242%;">
-                        <span class=" handle-left-arrow"></span>
-                        <span class="handle-right-arrow"></span>
-                      </div>
-  
-                    </div>
-  
-  
-                    <div id="example2" class="bal-container-small">
-  
-                      <div class="bal-after">
-                        <img src="./static/images/comparison_n/Francis/francis_00000.png">
-                        <div class="bal-afterPosition afterLabel">
-                          Ours
-                        </div>
-                      </div>
-  
-                      <div class="bal-before" style="width: 50%;">
-                        <div class="bal-before-inset" style="width: 512px;">
-                          <img src="./static/images/comparison_n/Francis/nope_0000_francis.png">
-                          <div class="bal-beforePosition beforeLabel">
-                            Nope-NeRF [Bian 2022]
-                          </div>
-                        </div>
-                      </div>
-  
-                      <div class="bal-handle" style="left: 50%;">
-                        <span class=" handle-left-arrow"></span>
-                        <span class="handle-right-arrow"></span>
-                      </div>
-                    </div>
-                    <div id="example3" class="bal-container-small">
-  
-                      <div class="bal-after">
-                        <img src="./static/images/comparison_n/Bicycle/bicycle_00005.png">
-                        <div class="bal-afterPosition afterLabel">
-                          Ours
-                        </div>
-                      </div>
-  
-                      <div class="bal-before" style="width: 50%;">
-                        <div class="bal-before-inset" style="width: 512px;">
-                          <img src="./static/images/comparison_n/Bicycle/0005_nerfmm.png">
-                          <div class="bal-beforePosition beforeLabel">
-                            NeRFmm [Wang 2021]
-                          </div>
-                        </div>
-                      </div>
-  
-                      <div class="bal-handle" style="left: 50%;">
-                        <span class=" handle-left-arrow"></span>
-                        <span class="handle-right-arrow"></span>
-                      </div>
-                    </div>
-  
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-  
-            <!--/ Visual Effects. -->
-  
-            <!-- Matting. -->
-            <div class="column">
+        <div class="columns is-centered">
+          <!-- Visual Effects. -->
+          <div class="column">
+            <div class="content">
               <div class="columns is-centered">
-                <div class="column content">
-  
-                  <div id="example4" class="bal-container-small">
+                <div class="column is-full-width">
+                  <div id="example1" class="bal-container-small">
+
                     <div class="bal-after">
-                      <img src="./static/images/comparison_n/Horse/horse_00000.png">
+                      <img src="./static/images/comparison_n/Family/family_00006.png">
                       <div class="bal-afterPosition afterLabel" style="z-index:1;">
                         Ours
                       </div>
                     </div>
-  
-                    <div class="bal-before" style="width:62.10191082802548%;">
+
+                    <div class="bal-before" style="width:96.4968152866242%;">
                       <div class="bal-before-inset" style="width: 512px;">
-                        <img src="./static/images/comparison_n/Horse/cfgs_0000_horse.png">
+                        <img src="./static/images/comparison_n/Family/0006_cf.png">
                         <div class="bal-beforePosition beforeLabel">
                           CF-3DGS [Fu 2023]
                         </div>
                       </div>
                     </div>
-  
-                    <div class="bal-handle" style="left:62.10191082802548%;">
+
+                    <div class="bal-handle" style="left:96.4968152866242%;">
                       <span class=" handle-left-arrow"></span>
                       <span class="handle-right-arrow"></span>
                     </div>
-  
+
                   </div>
-  
-                  <div id="example5" class="bal-container-small">
+
+
+                  <div id="example2" class="bal-container-small">
+
                     <div class="bal-after">
-                      <img src="./static/images/comparison_n/Barn/barn_00003.png">
-                      <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      <img src="./static/images/comparison_n/Francis/francis_00000.png">
+                      <div class="bal-afterPosition afterLabel">
                         Ours
                       </div>
                     </div>
-  
-                    <div class="bal-before" style="width:56.77179962894249%;">
+
+                    <div class="bal-before" style="width: 50%;">
                       <div class="bal-before-inset" style="width: 512px;">
-                        <img src="./static/images/comparison_n/Barn/nope_0003_barn.png">
+                        <img src="./static/images/comparison_n/Francis/nope_0000_francis.png">
                         <div class="bal-beforePosition beforeLabel">
-                          NoPe-NeRF [Bian 2022]
+                          Nope-NeRF [Bian 2022]
                         </div>
                       </div>
                     </div>
-  
-                    <div class="bal-handle" style="left:56.77179962894249%;">
+
+                    <div class="bal-handle" style="left: 50%;">
                       <span class=" handle-left-arrow"></span>
                       <span class="handle-right-arrow"></span>
                     </div>
-  
                   </div>
-                  <div id="example6" class="bal-container-small">
+                  <div id="example3" class="bal-container-small">
+
                     <div class="bal-after">
-                      <img src="./static/images/comparison_n/Car/car_00006.png">
-                      <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      <img src="./static/images/comparison_n/Bicycle/bicycle_00005.png">
+                      <div class="bal-afterPosition afterLabel">
                         Ours
                       </div>
                     </div>
-  
-                    <div class="bal-before" style="width:56.77179962894249%;">
+
+                    <div class="bal-before" style="width: 50%;">
                       <div class="bal-before-inset" style="width: 512px;">
-                        <img src="./static/images/comparison_n/Car/0006_nerfmm.png">
+                        <img src="./static/images/comparison_n/Bicycle/0005_nerfmm.png">
                         <div class="bal-beforePosition beforeLabel">
                           NeRFmm [Wang 2021]
                         </div>
                       </div>
                     </div>
-  
-                    <div class="bal-handle" style="left:56.77179962894249%;">
+
+                    <div class="bal-handle" style="left: 50%;">
                       <span class=" handle-left-arrow"></span>
                       <span class="handle-right-arrow"></span>
                     </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!--/ Visual Effects. -->
+
+          <!-- Matting. -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+
+                <div id="example4" class="bal-container-small">
+                  <div class="bal-after">
+                    <img src="./static/images/comparison_n/Horse/horse_00000.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before" style="width:62.10191082802548%;">
+                    <div class="bal-before-inset" style="width: 512px;">
+                      <img src="./static/images/comparison_n/Horse/cfgs_0000_horse.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        CF-3DGS [Fu 2023]
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:62.10191082802548%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+
+                <div id="example5" class="bal-container-small">
+                  <div class="bal-after">
+                    <img src="./static/images/comparison_n/Barn/barn_00003.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before" style="width:56.77179962894249%;">
+                    <div class="bal-before-inset" style="width: 512px;">
+                      <img src="./static/images/comparison_n/Barn/nope_0003_barn.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        NoPe-NeRF [Bian 2022]
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:56.77179962894249%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+                <div id="example6" class="bal-container-small">
+                  <div class="bal-after">
+                    <img src="./static/images/comparison_n/Car/car_00006.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before" style="width:56.77179962894249%;">
+                    <div class="bal-before-inset" style="width: 512px;">
+                      <img src="./static/images/comparison_n/Car/0006_nerfmm.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        NeRFmm [Wang 2021]
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:56.77179962894249%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-  
-  
       </div>
-    </section>
 
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{chen2024dreamcinemacinematictransferfree,
-      title={DreamCinema: Cinematic Transfer with Free Camera and 3D Character}, 
-      author={Weiliang Chen and Fangfu Liu and Diankun Wu and Haowen Sun and Haixu Song and Yueqi Duan},
-      year={2024},
-      eprint={2408.12601},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2408.12601}, 
-}</code></pre>
-  </div>
-</section>
+    </div>
+  </section>
+
+  <script>
+    new BeforeAfter({
+      id: '#example1'
+    });
+    new BeforeAfter({
+      id: '#example2'
+    });
+    new BeforeAfter({
+      id: '#example3'
+    });
+    new BeforeAfter({
+      id: '#example4'
+    });
+    new BeforeAfter({
+      id: '#example5'
+    });
+    new BeforeAfter({
+      id: '#example6'
+    });
 
 
-<footer class="footer">
-  <div class="container">
+  </script>
 
+  <!-- 
+<section class="section">
+  <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
 
-          <p>This website is constructed using the source code provided by <a
-            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, and we are grateful for their template.</p>
+        <div class="content has-text-justified">
+          <p>
+            Needs update
+          </p>
+         
         </div>
       </div>
     </div>
+
   </div>
-</footer>
+</section> -->
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{fan2024instantsplat,
+        title={InstantSplat: Unbounded Sparse-view Pose-free Gaussian Splatting in 40 Seconds}, 
+        author={Zhiwen Fan and Wenyan Cong and Kairun Wen and Kevin Wang and Jian Zhang and Xinghao Ding and Danfei Xu and Boris Ivanovic and Marco Pavone and Georgios Pavlakos and Zhangyang Wang and Yue Wang},
+        year={2024},
+        eprint={2403.20309},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV}
+      }</code></pre>
+    </div>
+  </section>
+  
+
+  <!-- TODO: update the arxiv link and github -->
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <!-- <a class="icon-link" href="">
+          <i class="fas fa-file-pdf"></i>
+        </a> -->
+        <!-- <a class="icon-link" href="" class="external-link" disabled>
+          <i class="fab fa-github"></i> -->
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              We thank the authors of
+              We thank the authors of <a href="https://nerfies.github.io/">Nerfies</a> that kindly open sourced the
+              template of this website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>
