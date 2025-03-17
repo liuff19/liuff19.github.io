@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Video-T1: Test-time Scaling for Video Generation</title>
+  <link rel="icon" type="image/x-icon" href="">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Video-T1: Test-time Scaling for Video Generation</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://liuff19.github.io/">Fangfu Liu</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="https://hanyang-21.github.io/">Hanyang Wang</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                Yimo Cai<sup>1</sup>,</span>
+              <span class="author-block">
+                  <a href="https://iseesaw.github.io/">Kaiyan Zhang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                  <a href="https://xiaohangzhan.github.io/">Xiaohang Zhan</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://duanyueqi.github.io/">Yueqi Duan</a><sup>1†</sup>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Tsinghua University</span>,
+                    <span class="author-block"><sup>2</sup>Tencent AI Lab</span>
+                    <!-- <span class="author-block">Institution Name<br>Conferance name and year</span> -->
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>,
+                    <span class="eql-cntrb"><small><sup>†</sup>Indicates Corresponding Author</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video> -->
+      <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            With the scale capability of increasing training data, model size, and computational cost, video generation has achieved impressive results in digital creation, enabling users to express creativity across various domains. Recently, researchers in Large Language Models (LLMs) have expanded the scaling to test-time, which can significantly improve LLM performance by using more inference-time computation. Instead of scaling up video foundation models through expensive training costs, we explore the power of <span>Test-Time Scaling (TTS)</span> in video generation, aiming to answer the question: if a video generation model is allowed to use non-trivial amount of inference-time compute, how much can it improve generation quality given a challenging text prompt. In this work, we reinterpret the test-time scaling of video generation as a searching problem to sample better trajectories from Gaussian noise space to the target video distribution. Specifically, we build the search space with test-time verifiers to provide feedback and heuristic algorithms to guide searching process. Given a text prompt, we first explore an intuitive linear search strategy by increasing noise candidates at inference time. As full-step denoising all frames simultaneously requires heavy test-time computation costs, we further design a more efficient TTS method for video generation called Tree-of-Frames (ToF) that adaptively expands and prunes video branches in an autoregressive manner. Extensive experiments on text-conditioned video generation benchmarks demonstrate that increasing test-time compute consistently leads to significant improvements in the quality of videos.          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/pipeline.png">
+
+          <p><strong>Pipeline of Test-Time Scaling for Video Generation.</strong> <i>Top:</i> Random Linear Search for TTS video generation is to randomly sample Gaussian noises, prompt the video generator to generate sequential of video clips through step-by-step denoising in a linear manner, and select the highest score form the test verifiers. 
+            <i>Bottom:</i> Tree of Frames (ToF) Search for TTS video generation is to divide the video generation process into three stages: 
+            (a) the first stage performs image-level alignment that influences the later frames; 
+            (b) the second stage is to apply dynamic prompt in test verifiers to focus on motion stability, physical plausibility to provide feedback that guides heuristic searching process; 
+            (c) the last stage assesses the overall quality of the video and select the video with highest alignment with text prompts.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Test-Time Scaling</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/fig1.png">
+
+          <p><strong>TTS consistently yields stable performance gains across different video generation models.</strong>
+            We conducted a series of random linear search experiments across multiple video generation models using different verifiers. 
+            Experiment results demonstrate that as the inference computational budget increases, all video generation models exhibit improved performance across different verifiers, eventually approaching a convergence limit once a certain threshold is reached. 
+            This finding indicates that the TTS strategy can effectively guide the search process during test time and significantly enhance generation quality. 
+            Moreover, when comparing different verifiers applied to the same video model, we observe varying growth rates and extents in their performance curves. 
+            This divergence suggests that each verifier emphasizes different evaluation aspects. </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Video Demos</h2>
+      <div id="results-carousel" class="carousel results-carousel"> 
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video3" autoplay controls muted loop class="video-left">
+              <source src="static/videos/flux/A_cat_wearing_sunglasses_and_working_as_a_lifeguard_at_a_pool.mp4"
+              type="video/mp4">
+            </video>
+
+            <video poster="" id="video4" autoplay controls muted loop class="video-right">
+              <source src="static/videos/flux/A_cat_wearing_sunglasses_and_working_as_a_lifeguard_at_a_pool_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A cat wearing sunglasses and working as a lifeguard at a pool.
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video3" autoplay controls muted loop class="video-left">
+              <source src="static/videos/flux/a_sheep_and_a_cow.mp4"
+              type="video/mp4">
+            </video>
+
+            <video poster="" id="video4" autoplay controls muted loop class="video-right">
+              <source src="static/videos/flux/a_sheep_and_a_cow_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A sheep and a cow.
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video3" autoplay controls muted loop class="video-left">
+              <source src="static/videos/flux/A_cute_raccoon_playing_guitar_in_a_boat_on_the_ocean.mp4"
+              type="video/mp4">
+            </video>
+
+            <video poster="" id="video4" autoplay controls muted loop class="video-right">
+              <source src="static/videos/flux/A_cute_raccoon_playing_guitar_in_a_boat_on_the_ocean_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A cute raccoon playing guitar in a boat on the ocean.
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video5" autoplay controls muted loop class="video-left">
+              <source src="static/videos/flux/Yellow_flowers_swing_in_the_wind.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video6" autoplay controls muted loop class="video-right">
+              <source src="static/videos/flux/Yellow_flowers_swing_in_the_wind_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Yellow flowers swing in the wind.
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video5" autoplay controls muted loop class="video-left">
+              <source src="static/videos/flux/a_cat_and_a_dog.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video6" autoplay controls muted loop class="video-right">
+              <source src="static/videos/flux/a_cat_and_a_dog_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A cat and a dog.
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video5" autoplay controls muted loop class="video-left">
+              <source src="static/videos/flux/A_storm_trooper_vacuuming_the_beach.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video6" autoplay controls muted loop class="video-right">
+              <source src="static/videos/flux/A_storm_trooper_vacuuming_the_beach_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A storm trooper vacuuming the beach.
+          </h2>
+        </div>
+        
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video1" autoplay controls muted loop height="50%" class="video-left">
+              <source src="static/videos/flux/A_panda_playing_on_a_swing_set.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video2" autoplay controls muted loop height="50%" class="video-right">
+              <source src="static/videos/flux/A_panda_playing_on_a_swing_set_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A panda playing on a swing set.
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video1" autoplay controls muted loop height="50%" class="video-left">
+              <source src="static/videos/flux/a_zebra_and_a_giraffe.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video2" autoplay controls muted loop height="50%" class="video-right">
+              <source src="static/videos/flux/a_zebra_and_a_giraffe_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A zebra and a giraffe.
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video1" autoplay controls muted loop height="50%" class="video-left">
+              <source src="static/videos/flux/Robot_dancing_in_Times_Square.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video2" autoplay controls muted loop height="50%" class="video-right">
+              <source src="static/videos/flux/Robot_dancing_in_Times_Square_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Robot dancing in Times Square.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Video Demos</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video9" autoplay controls muted loop class="video-left">
+              <source src="static/videos/cogvideo_5b/A_happy_fuzzy_panda_playing_guitar_nearby_a_campfire,_snow_mountain_in_the_background.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video10" autoplay controls muted loop class="video-right">
+              <source src="static/videos/cogvideo_5b/A_happy_fuzzy_panda_playing_guitar_nearby_a_campfire,_snow_mountain_in_the_background_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A happy fuzzy panda playing guitar nearby a campfire, snow mountain in the background.
+          </h2>
+        </div>
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video11" autoplay controls muted loop class="video-left">
+              <source src="static/videos/cogvideo_5b/A_corgi_is_playing_drum_kit.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video12" autoplay controls muted loop class="video-right">
+              <source src="static/videos/cogvideo_5b/A_corgi_is_playing_drum_kit_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A corgi is playing drum kit.
+          </h2>
+        </div>
+        
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video7" autoplay controls muted loop class="video-left">
+              <source src="static/videos/cogvideo_5b/A_bigfoot_walking_in_the_snowstorm.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video8" autoplay controls muted loop class="video-right">
+              <source src="static/videos/cogvideo_5b/A_bigfoot_walking_in_the_snowstorm_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A bigfoot walking in the snowstorm.
+          </h2>
+        </div>
+        
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video7" autoplay controls muted loop class="video-left">
+              <source src="static/videos/cogvideo_5b/A_panda_drinking_coffee_in_a_cafe_in_Paris.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video8" autoplay controls muted loop class="video-right">
+              <source src="static/videos/cogvideo_5b/A_panda_drinking_coffee_in_a_cafe_in_Paris_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A panda drinking coffee in a cafe in Paris.
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video7" autoplay controls muted loop class="video-left">
+              <source src="static/videos/cogvideo_5b/A_person_is_writing.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video8" autoplay controls muted loop class="video-right">
+              <source src="static/videos/cogvideo_5b/A_person_is_writing_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A person is writing.
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video7" autoplay controls muted loop class="video-left">
+              <source src="static/videos/cogvideo_5b/A_raccoon_is_playing_the_electronic_guitar.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video8" autoplay controls muted loop class="video-right">
+              <source src="static/videos/cogvideo_5b/A_raccoon_is_playing_the_electronic_guitar_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A raccoon is playing the electronic guitar.
+          </h2>
+        </div>
+        
+        <div class="item">
+          <div class="item-video">
+            <video poster="" id="video7" autoplay controls muted loop class="video-left">
+              <source src="static/videos/cogvideo_5b/A_steam_train_moving_on_a_mountainside.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="video8" autoplay controls muted loop class="video-right">
+              <source src="static/videos/cogvideo_5b/A_steam_train_moving_on_a_mountainside_TTS.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <h2 class="subtitle has-text-centered">
+            A steam train moving on a mountainside.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
