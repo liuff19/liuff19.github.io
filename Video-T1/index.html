@@ -140,8 +140,8 @@
         type="video/mp4">
       </video> -->
       <img src="static/images/teaser.png" alt="Teaser"/>
-      <h2 class="subtitle has-text-centered">
-        Video-T1: We present the generative effects and performance improvements of video generation under test-time scaling (TTS) settings. The videos generated with TTS are of higher quality and more consistent with the prompt than those generated without TTS.
+      <h2 class="subtitle has-text-justified">
+        <strong>Video-T1:</strong> We present the generative effects and performance improvements of video generation under test-time scaling (TTS) settings. The videos generated with TTS are of higher quality and more consistent with the prompt than those generated without TTS.
       </h2>
     </div>
   </div>
@@ -191,16 +191,37 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Test-Time Scaling</h2>
-        <div class="content has-text-justified">
-          <img src="./static/images/fig1.png">
+        <div style="display: flex; flex-direction: column">
+          <div class="content has-text-justified">
+            <img src="./static/images/fig1.png">
 
-          <p><strong>TTS consistently yields stable performance gains across different video generation models.</strong>
-            We conducted a series of random linear search experiments across multiple video generation models using different verifiers. 
-            Experiment results demonstrate that as the inference computational budget increases, all video generation models exhibit improved performance across different verifiers, eventually approaching a convergence limit once a certain threshold is reached. 
-            This finding indicates that the TTS strategy can effectively guide the search process during test time and significantly enhance generation quality. 
-            Moreover, when comparing different verifiers applied to the same video model, we observe varying growth rates and extents in their performance curves. 
-            This divergence suggests that each verifier emphasizes different evaluation aspects. </p>
+            <p><strong>TTS consistently yields stable performance gains across different video generation models.</strong>
+              We conducted a series of random linear search experiments across multiple video generation models using different verifiers. 
+              Experiment results demonstrate that as the inference computational budget increases, all video generation models exhibit improved performance across different verifiers, eventually approaching a convergence limit once a certain threshold is reached. 
+              This finding indicates that the TTS strategy can effectively guide the search process during test time and significantly enhance generation quality. 
+              Moreover, when comparing different verifiers applied to the same video model, we observe varying growth rates and extents in their performance curves. 
+              This divergence suggests that each verifier emphasizes different evaluation aspects. </p>
 
+          </div>
+          <br>
+          <div class="content has-text-justified">
+            <img src="./static/images/fig3.png">
+
+            <p><strong>Performance across most dimensions can be greatly improved with TTS.</strong>
+              The complexity of prompts across diverse benchmark dimensions is a key component in video TTS. We conduct experiments to quantitatively evaluate the performance improvement of different models using TTS methods across various dimensions. 
+              As ToF and random linear search can achieve a similar convergence score during test-time scaling, we choose the better score for (+TTS).
+              We find that for common prompt sets (<i>e.g.</i>, Scene, Object) and easily assessable categories (<i>e.g.</i>, Imaging Quality), TTS methods achieve significant improvements across different models. </p>
+
+          </div>
+
+          <div class="content has-text-justified">
+            <img src="./static/images/table.png">
+            <p><strong>A few dimensions heavily rely on the capabilities of foundation models, making improvements challenging for TTS.</strong>
+              However, for some hard-to-evaluate latent properties (<i>e.g.</i>, Motion Smoothness, Temporal Flickering), the improvement is less pronounced. 
+              This is likely because Motion Smoothness requires precise control of motion trajectories across frames, which is challenging for current video generation models to achieve. 
+              Temporal Flickering, on the other hand, involves maintaining consistent appearance and intensity over time, which is difficult to precisely assess, especially when dealing with complex scenes and dynamic objects.</p>
+
+          </div>
         </div>
       </div>
     </div>
