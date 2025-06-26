@@ -53,6 +53,9 @@
           <td style="padding:20px;width:100%;vertical-align:middle">
             <heading>News</heading>
             <p>
+        <li style="margin: 5px;" >
+              <b>2025-06:</b> Four papers on 3D and Video Generation are accepted by <a href="https://iccv.thecvf.com/">ICCV 2025</a>.
+              </li>
 	      <li style="margin: 5px;" >
               <b>2025-02:</b> Two papers on 4D Dynamics and Video Generation are accepted by <a href="https://cvpr.thecvf.com/">CVPR 2025</a>.
               </li>
@@ -93,54 +96,25 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:20px;width:30%;max-width:30%" align="center">
-              <img style="width:100%;max-width:100%" src="images/Video-T1.png" alt="dise">
+              <img style="width:100%;max-width:100%" src="images/spatial-mllm.png" alt="dise">
             </td>
             <td width="75%" valign="center">
-              <papertitle>Video-T1: Test-Time Scaling for Video Generation</papertitle>
+              <papertitle>Spatial-MLLM: Boosting MLLM Capabilities in Visual-based Spatial Intelligence</papertitle>
               <br>
-              <strong>Fangfu Liu*</strong>,
-              <a href="https://hanyang-21.github.io/"> Hanyang Wang* </a>,
-              Yimo Cai,
-              <a href="https://iseesaw.github.io/"> Kaiyan Zhang </a>,
-              <a href="https://xiaohangzhan.github.io/"> Xiaohang Zhan </a>,
+              Diankun Wu*,
+	            <strong>Fangfu Liu*</strong>,
+              Yi-Hsin Hung,
               <a href="https://duanyueqi.github.io/"> Yueqi Duan </a>
               <br>
               <em>Arxiv, 2025</em>
               <br>
-              <a href="https://arxiv.org/abs/2503.18942">[arXiv]</a>
-              <a href="https://github.com/liuff19/Video-T1">[Code]</a>
-              <a href="https://liuff19.github.io/Video-T1/">[Project Page]</a> 
+              <a href="https://arxiv.org/abs/2505.23747">[arXiv]</a>
+              <a href="https://github.com/diankun-wu/Spatial-MLLM">[Code]</a>
+              <a href="https://diankun-wu.github.io/Spatial-MLLM/">[Project Page]</a> 
               <br>
-              <p> We present the generative effects and performance improvements of video generation under test-time scaling (TTS) settings. The videos generated with TTS are of higher quality and more consistent with the prompt than those generated without TTS.</p>
+              <p> In this paper, we present Spatial-MLLM, a novel framework for visual-based spatial reasoning from purely 2D observations. Unlike conventional video MLLMs which rely on CLIP-based visual encoders optimized for semantic understanding, our key insight is to unleash the strong structure prior from the feed-forward visual geometry foundation model. </p>
             </td>
           </tr>
-
-          
-          <tr>
-            <td style="padding:20px;width:30%;max-width:30%" align="center">
-              <img style="width:100%;max-width:100%" src="images/pipeline-dimensionX.png" alt="dise">
-            </td>
-            <td width="75%" valign="center">
-              <papertitle>DimensionX: Create Any 3D and 4D Scenes from a Single Image with Controllable Video Diffusion</papertitle>
-              <br>
-              <a href="https://github.com/wenqsun"> Wenqiang Sun* </a>,
-              <a href="https://chenshuo20.github.io/"> Shuo Chen* </a>,
-              <strong>Fangfu Liu*</strong>,
-              <a href="https://scholar.google.com/citations?user=2pbka1gAAAAJ"> Zilong Chen </a>,
-              <a href="https://duanyueqi.github.io/"> Yueqi Duan </a>,
-              <a href="https://eejzhang.people.ust.hk/home.html"> Jun Zhang </a>,
-              <a href="https://yikaiw.github.io/"> Yikai Wang </a>
-              <br>
-              <em>Arxiv, 2024</em>
-              <br>
-              <a href="https://arxiv.org/abs/2411.04928">[arXiv]</a>
-              <a href="https://github.com/wenqsun/DimensionX">[Code]</a>
-              <a href="https://chenshuo20.github.io/DimensionX/">[Project Page]</a> 
-              <br>
-              <p> In this paper, we introduce DimensionX, a framework designed to generate photorealistic 3D and 4D scenes from just a single image with video diffusion. We believe that our research provides a promising direction to create a dynamic and interactive environment with video diffusion models.</p>
-            </td>
-          </tr>
-
 
           <tr>
             <td style="padding:20px;width:30%;max-width:30%" align="center">
@@ -240,6 +214,57 @@
       </tbody></table>
 
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+        <tr>
+          <td style="padding:20px;width:30%;max-width:30%" align="center">
+            <img style="width:100%;max-width:100%" src="images/Video-T1.png" alt="dise">
+          </td>
+          <td width="75%" valign="center">
+            <papertitle>Video-T1: Test-Time Scaling for Video Generation</papertitle>
+            <br>
+            <strong>Fangfu Liu*</strong>,
+            <a href="https://hanyang-21.github.io/"> Hanyang Wang* </a>,
+            Yimo Cai,
+            <a href="https://iseesaw.github.io/"> Kaiyan Zhang </a>,
+            <a href="https://xiaohangzhan.github.io/"> Xiaohang Zhan </a>,
+            <a href="https://duanyueqi.github.io/"> Yueqi Duan </a>
+            <br>
+            <em>IEEE International Conference on Computer Vision (<strong>ICCV</strong>)</em>, 2025
+            <br>
+            <a href="https://arxiv.org/abs/2503.18942">[arXiv]</a>
+            <a href="https://github.com/liuff19/Video-T1">[Code]</a>
+            <a href="https://liuff19.github.io/Video-T1/">[Project Page]</a> 
+            <br>
+            <p> We present the generative effects and performance improvements of video generation under test-time scaling (TTS) settings. The videos generated with TTS are of higher quality and more consistent with the prompt than those generated without TTS.</p>
+          </td>
+        </tr>
+
+        
+        <tr>
+          <td style="padding:20px;width:30%;max-width:30%" align="center">
+            <img style="width:100%;max-width:100%" src="images/pipeline-dimensionX.png" alt="dise">
+          </td>
+          <td width="75%" valign="center">
+            <papertitle>DimensionX: Create Any 3D and 4D Scenes from a Single Image with Controllable Video Diffusion</papertitle>
+            <br>
+            <a href="https://github.com/wenqsun"> Wenqiang Sun* </a>,
+            <a href="https://chenshuo20.github.io/"> Shuo Chen* </a>,
+            <strong>Fangfu Liu*</strong>,
+            <a href="https://scholar.google.com/citations?user=2pbka1gAAAAJ"> Zilong Chen </a>,
+            <a href="https://duanyueqi.github.io/"> Yueqi Duan </a>,
+            <a href="https://eejzhang.people.ust.hk/home.html"> Jun Zhang </a>,
+            <a href="https://yikaiw.github.io/"> Yikai Wang </a>
+            <br>
+            <em>IEEE International Conference on Computer Vision (<strong>ICCV</strong>)</em>, 2025
+            <br>
+            <a href="https://arxiv.org/abs/2411.04928">[arXiv]</a>
+            <a href="https://github.com/wenqsun/DimensionX">[Code]</a>
+            <a href="https://chenshuo20.github.io/DimensionX/">[Project Page]</a> 
+            <br>
+            <p> In this paper, we introduce DimensionX, a framework designed to generate photorealistic 3D and 4D scenes from just a single image with video diffusion. We believe that our research provides a promising direction to create a dynamic and interactive environment with video diffusion models.</p>
+          </td>
+        </tr>
+
           <tr>
             <td style="padding:20px;width:30%;max-width:30%" align="center">
               <img style="width:100%;max-width:100%" src="images/videoscene.png" alt="dise">
