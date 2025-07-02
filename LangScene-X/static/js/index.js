@@ -78,20 +78,41 @@ $(document).ready(function ()
 				}
 
 				const source = videoElement.querySelector('source');
-				source.src = videoInfo.src;
-				videoElement.load();
-
-				videoElement.addEventListener('loadeddata', () =>
+				if (source)
 				{
-					if (originalVideo.readyState >= 2)
+					source.src = videoInfo.src;
+					videoElement.load();
+
+					// 改进的加载事件监听
+					const handleLoadedData = () =>
 					{
-						videoElement.currentTime = originalVideo.currentTime;
-						if (!originalVideo.paused)
+						try
 						{
-							videoElement.play();
+							if (originalVideo.readyState >= 2)
+							{
+								videoElement.currentTime = originalVideo.currentTime;
+								if (!originalVideo.paused)
+								{
+									videoElement.play().catch(e => console.warn('Auto-play failed:', e));
+								}
+							}
+						} catch (error)
+						{
+							console.warn('Error syncing video:', error);
 						}
-					}
-				});
+					};
+
+					videoElement.addEventListener('loadeddata', handleLoadedData);
+					
+					// 添加错误处理
+					videoElement.addEventListener('error', (e) =>
+					{
+						console.error('Video load error:', videoInfo.src, e);
+					});
+				} else
+				{
+					console.error('No source element found in video:', videoElement);
+				}
 
 				videoElements.set(videoInfo.src, videoElement);
 			});
@@ -113,58 +134,129 @@ $(document).ready(function ()
 			const targetVideoId = this.getAttribute('data-target');
 			const container = videoContainers.get(targetVideoId);
 
-			if (container && container.videos.has(videoSrc))
+			console.log('Button clicked:', { videoSrc, targetVideoId, containerExists: !!container });
+
+			if (!container)
 			{
-				const currentVideo = container.currentVideo;
-				const newVideo = container.videos.get(videoSrc);
+				console.error('Container not found for:', targetVideoId);
+				return;
+			}
 
-				if (currentVideo !== newVideo)
+			if (!container.videos.has(videoSrc))
+			{
+				console.error('Video not found:', videoSrc, 'Available videos:', Array.from(container.videos.keys()));
+				return;
+			}
+
+			const currentVideo = container.currentVideo;
+			const newVideo = container.videos.get(videoSrc);
+
+			if (currentVideo !== newVideo)
+			{
+				// 确保新视频已加载
+				if (newVideo.readyState < 2)
 				{
-					newVideo.currentTime = currentVideo.currentTime;
-					const isPlaying = !currentVideo.paused;
-
-					currentVideo.style.display = 'none';
-					newVideo.style.display = '';
-					newVideo.style.position = currentVideo.style.position || 'relative';
-
-					if (isPlaying)
+					console.log('Video not ready, waiting...');
+					newVideo.addEventListener('loadeddata', () =>
 					{
-						newVideo.play();
-					}
-
-					container.currentVideo = newVideo;
-					container.currentSrc = videoSrc;
-
-					container.videos.forEach((video, src) =>
-					{
-						if (video !== newVideo)
-						{
-							video.currentTime = newVideo.currentTime;
-						}
-					});
+						performVideoSwitch(currentVideo, newVideo, container, videoSrc);
+					}, { once: true });
+					return;
 				}
 
-				const parentContainer = this.closest('.item-video');
-				const allButtons = parentContainer.querySelectorAll('.video-switch-btn');
-				allButtons.forEach(btn => btn.classList.remove('active'));
-				this.classList.add('active');
+				performVideoSwitch(currentVideo, newVideo, container, videoSrc);
 			}
+
+			// 更新按钮状态
+			const parentContainer = this.closest('.item-video');
+			const allButtons = parentContainer.querySelectorAll('.video-switch-btn');
+			allButtons.forEach(btn => btn.classList.remove('active'));
+			this.classList.add('active');
 		});
 	});
+
+	// 提取视频切换逻辑到单独函数
+	function performVideoSwitch(currentVideo, newVideo, container, videoSrc)
+	{
+		try
+		{
+			const currentTime = currentVideo.currentTime;
+			const isPlaying = !currentVideo.paused;
+
+			// 设置新视频时间
+			newVideo.currentTime = currentTime;
+
+			// 切换显示
+			currentVideo.style.display = 'none';
+			newVideo.style.display = '';
+			newVideo.style.position = currentVideo.style.position || 'relative';
+
+			// 继续播放
+			if (isPlaying)
+			{
+				newVideo.play().catch(e => console.warn('Play failed:', e));
+			}
+
+			// 更新容器状态
+			container.currentVideo = newVideo;
+			container.currentSrc = videoSrc;
+
+			// 同步其他视频时间
+			container.videos.forEach((video, src) =>
+			{
+				if (video !== newVideo)
+				{
+					try
+					{
+						video.currentTime = currentTime;
+					} catch (e)
+					{
+						console.warn('Failed to sync video time:', e);
+					}
+				}
+			});
+
+			console.log('Video switched successfully to:', videoSrc);
+		} catch (error)
+		{
+			console.error('Error during video switch:', error);
+		}
+	}
 
 
 	function initializeButtonStates()
 	{
 		videoSwitchButtons.forEach(button =>
 		{
-			const targetVideoId = button.getAttribute('data-target');
-			const targetVideo = document.getElementById(targetVideoId);
-			const buttonVideoSrc = button.getAttribute('data-video');
-			const currentVideoSrc = targetVideo.querySelector('source').src;
-
-			if (currentVideoSrc.includes(buttonVideoSrc.split('/').pop()))
+			try
 			{
-				button.classList.add('active');
+				const targetVideoId = button.getAttribute('data-target');
+				const targetVideo = document.getElementById(targetVideoId);
+				const buttonVideoSrc = button.getAttribute('data-video');
+				
+				if (!targetVideo)
+				{
+					console.warn('Target video not found:', targetVideoId);
+					return;
+				}
+				
+				const sourceElement = targetVideo.querySelector('source');
+				if (!sourceElement)
+				{
+					console.warn('Source element not found for video:', targetVideoId);
+					return;
+				}
+				
+				const currentVideoSrc = sourceElement.src;
+
+				if (currentVideoSrc.includes(buttonVideoSrc.split('/').pop()))
+				{
+					button.classList.add('active');
+					console.log('Button activated:', button.textContent);
+				}
+			} catch (error)
+			{
+				console.error('Error initializing button state:', error);
 			}
 		});
 	}
