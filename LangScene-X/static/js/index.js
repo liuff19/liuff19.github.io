@@ -1,7 +1,17 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
 let carousels;
+
 const carouselOptions = {
+	slidesToScroll: 1,
+	slidesToShow: 1,
+	loop: true,
+	infinite: true,
+	autoplay: true,
+	autoplaySpeed: 5000,
+};
+
+const singlecarouselOptions = {
 	slidesToScroll: 1,
 	slidesToShow: 1,
 	loop: false,
@@ -25,15 +35,6 @@ function initCarousels()
 	}
 	carousels = bulmaCarousel.attach('.carousel', carouselOptions);
 }
-
-// function initCarousels()
-// {
-// 	if (carousels && carousels.forEach)
-// 	{
-// 		carousels.forEach(c => c.destroy());
-// 	}
-// 	carousels = bulmaCarousel.attach('.carousel', carouselOptions);
-// }
 
 $(document).ready(function ()
 {
