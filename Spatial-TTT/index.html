@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training">
+  <meta property="og:title" content="Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training"/>
+  <meta property="og:description" content="Streaming visual-based spatial intelligence with test-time training for long-horizon 3D scene understanding."/>
+  <meta property="og:url" content="https://liuff19.github.io/Spatial-TTT/"/>
+  <meta property="og:image" content="static/images/teaser.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:title" content="Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training">
+  <meta name="twitter:description" content="Streaming visual-based spatial intelligence with test-time training.">
+  <meta name="twitter:image" content="static/images/teaser.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="Spatial Intelligence, Test-Time Training, MLLM, Video Understanding, 3D Scene">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training</title>
+  <link rel="icon" type="image/x-icon" href="">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="static/css/index.css?v=4">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <a href="https://liuff19.github.io/" class="nav-home" title="Home">
+        <i class="fas fa-home"></i>
+      </a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-btn">
+          More Research
+          <i class="fas fa-chevron-down nav-arrow"></i>
+        </span>
+        <div class="nav-dropdown-content">
+          <a href="https://diankun-wu.github.io/Spatial-MLLM/">Spatial-MLLM</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        <span class="title-line1"><span class="title-project">Spatial-TTT</span><span class="title-rest">: Streaming Visual-based Spatial Intelligence</span></span>
+        <span class="title-line2">with Test-Time Training</span>
+      </h1>
+      <div class="hero-authors">
+        <div class="author-list">
+          <a href="https://liuff19.github.io/">Fangfu Liu</a><sup>*</sup>,
+          <a href="#">Diankun Wu</a><sup>*</sup>,
+          <a href="#">Jiawei Chi</a><sup>*</sup>,
+          Yimo Cai<sup>1</sup>,
+          Yi-Hsin Hung<sup>1</sup>,
+          <a href="#">Xumin Yu</a><sup>2</sup>,
+          <a href="#">Hao Li</a><sup>3</sup>,<br>
+          <a href="#">Han Hu</a><sup>2</sup>,
+          <a href="#">Yongming Rao</a><sup>†,2</sup>,
+          <a href="https://duanyueqi.github.io/">Yueqi Duan</a><sup>†,1</sup>
+        </div>
+        <div class="hero-affiliations">
+          <sup>1</sup>Tsinghua University &nbsp; <sup>2</sup>Tencent Hunyuan &nbsp; <sup>3</sup>NTU
+        </div>
+        <div class="hero-notes"><sup>*</sup>Equal contribution &nbsp; <sup>†</sup>Corresponding author</div>
+      </div>
+      <div class="hero-logos">
+        <a href="https://www.tsinghua.edu.cn" target="_blank" rel="noopener" class="hero-logo-link" aria-label="Tsinghua University">
+          <img src="static/images/tsinghua-logo.png" alt="Tsinghua University" class="hero-logo-img logo-tsinghua">
+        </a>
+        <a href="https://hunyuan.tencent.com" target="_blank" rel="noopener" class="hero-logo-link" aria-label="Tencent Hunyuan">
+          <img src="static/images/hunyuan-logo.png" alt="Tencent Hunyuan" class="hero-logo-img logo-hunyuan">
+        </a>
+      </div>
+      <div class="hero-links">
+        <a href="static/pdfs/Spatial-TTT-arxiv.pdf" class="hero-link" target="_blank" rel="noopener"><span class="icon"><i class="fa-solid fa-file-pdf"></i></span> Paper</a>
+        <a href="#" class="hero-link" target="_blank" rel="noopener"><span class="icon ai ai-arxiv"></span> arXiv</a>
+        <a href="#" class="hero-link" target="_blank" rel="noopener"><span class="icon"><i class="fa-brands fa-github"></i></span> Code</a>
+        <a href="https://huggingface.co/collections/THU-SI/spatial-ttt" class="hero-link" target="_blank" rel="noopener"><span class="icon"><img src="static/images/hf-logo.png" alt="HF" class="hf-logo"></span> Model</a>
+        <a href="https://huggingface.co/collections/THU-SI/spatial-ttt" class="hero-link" target="_blank" rel="noopener"><span class="icon"><img src="static/images/hf-logo.png" alt="HF" class="hf-logo"></span> Data</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Teaser -->
+  <section class="section section-teaser">
+    <div class="container">
+      <div class="teaser-wrap">
+        <img src="static/images/teaser.png?v=2" alt="Spatial-TTT Teaser" class="teaser-img">
+        <p class="teaser-caption">
+          <strong>Spatial-TTT</strong> maintains and updates spatial state from streaming video chunks, then answers spatial questions. Test-time training with fast weights acts as compact non-linear memory over long-horizon egocentric video.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract -->
+  <section class="section section-abstract">
+    <div class="container container-narrow">
+      <h2 class="section-title">Abstract</h2>
+      <div class="abstract-text">
+        <p>
+          Humans perceive and understand real-world spaces through a stream of visual observations. The ability to streamingly maintain and update spatial evidence from potentially unbounded video streams is essential for spatial intelligence. The core challenge is not simply longer context windows but how spatial information is selected, organized, and retained over time.
+        </p>
+        <p>
+          We propose <em>Spatial-TTT</em> for streaming visual-based spatial intelligence with <strong>test-time training (TTT)</strong>, which adapts a subset of parameters (fast weights) to capture and organize spatial evidence over long-horizon scene videos. We design a hybrid architecture with large-chunk updates in parallel with sliding-window attention for efficient spatial video processing. We introduce a <strong>spatial-predictive mechanism</strong> in TTT layers using 3D spatiotemporal convolution to capture geometric correspondence and temporal continuity. We further construct a dataset with dense 3D spatial descriptions to guide fast weights to memorize and organize global 3D spatial signals in a structured manner. Extensive experiments show that Spatial-TTT improves long-horizon spatial understanding and achieves state-of-the-art performance on video spatial benchmarks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Demo -->
+  <section class="section section-video">
+    <div class="container container-narrow">
+      <h2 class="section-title">Video</h2>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/U7gLdwCj6tY" 
+                title="Spatial-TTT Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-caption">
+        <strong>Spatial-TTT</strong> maintains and updates spatial evidence from streaming video, enabling accurate spatial reasoning over long-horizon egocentric observations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Contributions -->
+  <section class="section section-contributions">
+    <div class="container">
+      <h2 class="section-title">Key Contributions</h2>
+      <p class="section-lead">Spatial-TTT introduces test-time training for streaming spatial intelligence, using adaptive fast weights as compact non-linear memory to accumulate 3D evidence from unbounded video streams.</p>
+      <div class="contrib-grid">
+        <article class="contrib-card">
+          <div class="contrib-icon">🧠</div>
+          <h3>Fast Weights as Spatial Memory</h3>
+          <p>We introduce TTT for streaming spatial understanding: adaptive fast weights function as compact non-linear memory, continuously encoding spatial evidence through online updates—enabling sublinear memory growth over unbounded video streams.</p>
+        </article>
+        <article class="contrib-card">
+          <div class="contrib-icon">📊</div>
+          <h3>Spatial-Predictive Mechanism</h3>
+          <p>Conventional TTT uses point-wise projections that ignore spatial structure. We apply depthwise 3D convolutions so fast weights learn predictive mappings between spatiotemporal contexts rather than isolated tokens, capturing geometric correspondence.</p>
+        </article>
+        <article class="contrib-card">
+          <div class="contrib-icon">📚</div>
+          <h3>Dense Scene Supervision</h3>
+          <p>Existing spatial QA provides sparse, local supervision with weak gradient signals. We construct a dense scene-description dataset (global context, objects & counts, spatial relations) for rich supervision of fast-weight update dynamics.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method Overview -->
+  <section class="section section-method">
+    <div class="container">
+      <h2 class="section-title">Method Overview</h2>
+      <div class="figure-block">
+        <img src="static/images/pipeline.png" alt="Spatial-TTT pipeline" class="figure-img">
+        <p class="figure-caption">
+          <strong>Overview of Spatial-TTT.</strong> The model uses a hybrid architecture that interleaves TTT layers with self-attention anchor layers at a 3:1 ratio. Within each TTT layer, sliding-window attention (SWA) and the TTT branch run in parallel with shared Q/K/V; the TTT branch applies a spatial-predictive mechanism with depthwise spatiotemporal convolution to capture geometric structure and temporal continuity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experimental Results -->
+  <section class="section section-results">
+    <div class="container">
+      <h2 class="section-title">Experimental Results</h2>
+      <p class="section-lead">Spatial-TTT achieves state-of-the-art on video spatial benchmarks while scaling efficiently in memory and compute with input length.</p>
+
+      <div class="result-block">
+        <h3 class="result-heading">VSI-Bench</h3>
+        <p class="result-desc">General spatial understanding on egocentric video (ScanNet, ScanNet++, ARKitScenes). We report Accuracy (ACC) for multiple-choice and Mean Relative Accuracy (MRA) for numerical questions.</p>
+        <div class="figure-block">
+          <img src="static/images/vsi-bench-comparison.png?v=1" alt="VSI-Bench comparison" class="figure-img">
+        </div>
+      </div>
+
+      <div class="result-block">
+        <h3 class="result-heading">VSI-SUPER: Recall & Count</h3>
+        <p class="result-desc">Streaming spatial sensing on long-horizon video. VSR tests recall of temporal order of inserted objects; VSC tests object counting across extended sequences. Spatial-TTT maintains stable performance as video length increases via online fast-weight updates.</p>
+        <div class="figure-block">
+          <img src="static/images/vsr_vsc_comparison.png" alt="VSR VSC comparison" class="figure-img">
+        </div>
+      </div>
+
+      <div class="result-block">
+        <h3 class="result-heading">Memory & Compute Scaling</h3>
+        <p class="result-desc">Peak decoding memory and theoretical TFLOPs vs input length (352×480). Spatial-TTT scales near-linearly; at 1024 frames it achieves over 40% reduction in both TFLOPs and memory compared to Qwen3-VL-2B.</p>
+        <div class="figure-block">
+          <img src="static/images/peak_mem_tflops.png" alt="Peak memory and TFLOPs" class="figure-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citation -->
+  <section class="section section-citation">
+    <div class="container container-narrow">
+      <h2 class="section-title">Citation</h2>
+      <pre class="bibtex"><code>@article{spatialttt2025,
+  title     = {Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training},
+  author    = {Liu, Fangfu and Wu, Diankun and Chi, Jiawei and Cai, Yimo and Hung, Yi-Hsin and Yu, Xumin and Li, Hao and Hu, Han and Rao, Yongming and Duan, Yueqi},
+  journal   = {arXiv preprint},
+  year      = {2025}
+}</code></pre>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">© 2025 Spatial-TTT Project · Tsinghua University, Tencent Hunyuan, NTU</p>
+      <p class="footer-text footer-sub">Streaming Visual-based Spatial Intelligence with Test-Time Training</p>
+    </div>
+  </footer>
+
+  <script src="static/js/index.js"></script>
+</body>
+</html>
