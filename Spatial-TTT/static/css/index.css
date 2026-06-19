@@ -208,40 +208,18 @@ body {
 }
 
 .hero-venue {
-  margin: 1.15rem 0 0;
+  margin: 0.65em 0 0;
+  font-size: 1.05em;
+  line-height: 1.6;
 }
 
-.hero-venue-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.5rem 1.15rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
-  border: 1px solid #93c5fd;
-  color: #1e4a8a;
-  text-decoration: none;
-  font-family: var(--font-family);
-  font-size: 1rem;
+.hero-venue strong {
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  box-shadow: 0 2px 8px rgba(52, 88, 142, 0.1);
-}
-
-.hero-venue-badge:hover {
-  transform: translateY(-1px);
-  border-color: #5b8fc9;
-  box-shadow: 0 4px 12px rgba(52, 88, 142, 0.16);
-  color: #34588e;
+  color: #2d3748;
 }
 
 .hero-venue-fire {
-  font-size: 1.05rem;
-  letter-spacing: 0;
-  text-transform: none;
-  line-height: 1;
+  color: red;
 }
 
 /* Institution logos: below affiliations, with hover effect like OmniVGGT */
